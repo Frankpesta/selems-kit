@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reservations — Selems admin</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&amp;family=Instrument+Sans:wght@400..700&amp;display=swap">
+<style>body{margin:0}
+.rs{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:24px;align-items:start}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid #DCE1E1}
+.tabs button{min-height:42px;padding:0 14px;border:0;background:transparent;font:inherit;font-size:14px;font-weight:600;color:#5E6E79;border-bottom:2px solid transparent;cursor:pointer}
+.tabs button.on{color:#17222D;border-bottom-color:#A4561B}
+.tbl tbody tr{cursor:pointer}
+.tbl tbody tr:hover td{background:#F7F8F7}
+.kv{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 12px;font-size:14px;margin:0}
+.kv dt{color:#5E6E79}.kv dd{margin:0}
+@media (max-width:1200px){.rs{grid-template-columns:minmax(0,1fr)}}
+</style>
+</helmet>
+<div class="adm">
+<aside class="side">
+<a class="brand" href="AdminDashboard.dc.html"><span class="w">Selems</span><span class="s">Admin</span></a>
+<nav aria-label="Admin">
+<a href="AdminDashboard.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>Today</a>
+<a class="on" href="AdminReservations.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Reservations <span class="pill p-warn" style="margin-left: auto">3</span></a>
+<a href="AdminCalendar.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Availability</a>
+<a href="AdminRooms.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V7h5v3"/></svg>Rooms &amp; rates</a>
+<p class="grp">Website</p>
+<a href="AdminContent.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M9 12h6M9 16h6"/></svg>Content &amp; SEO</a>
+<a href="AdminContent.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Inquiries <span class="pill p-info" style="margin-left: auto">2</span></a>
+<a href="AdminContent.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4l2.5 5 5.5.8-4 3.9.9 5.5L12 16.6 7.1 19.2l.9-5.5-4-3.9 5.5-.8z"/></svg>Reviews</a>
+<p class="grp">Hotel</p>
+<a href="AdminDashboard.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>Staff &amp; settings</a>
+</nav>
+</aside>
+
+<main class="main">
+<div class="topbar">
+<div><h1>Reservations</h1><p class="small muted" style="margin: 0">Click a booking to see and change it · <span class="pill p-mute">Sample data</span></p></div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap"><button class="abtn">Export CSV</button><button class="abtn pri">New booking</button></div>
+</div>
+<div class="pane">
+<div class="tabs" role="tablist"><button class="on" role="tab">All</button><button role="tab">Needs confirmation (3)</button><button role="tab">Arriving</button><button role="tab">In house</button><button role="tab">Checked out</button><button role="tab">Cancelled</button></div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap">
+<input class="input" id="rq" placeholder="Search name, phone or ref" style="flex: 1 1 240px">
+<select class="input" id="rf1" aria-label="Dates"><option>Next 30 days</option><option>This month</option><option>Custom range</option></select>
+<select class="input" id="rf2" aria-label="Room type"><option>All room types</option><option>Suites</option><option>Rooms</option></select>
+<select class="input" id="rf3" aria-label="Source"><option>All sources</option><option>Website</option><option>Phone</option><option>WhatsApp</option><option>Walk-in</option></select>
+</div>
+<div class="rs">
+<section class="panel tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Ref</th><th>Guest</th><th>Room</th><th>Dates</th><th>Source</th><th style="text-align: right">Total</th><th>Status</th></tr></thead>
+<tbody>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="7">
+<tr class="{{r.cls}}" onClick="{{r.pick}}"><td>{{r.ref}}</td><td><strong>{{r.guest}}</strong></td><td>{{r.room}}</td><td>{{r.dates}}</td><td>{{r.src}}</td><td style="text-align: right">{{r.total}}</td><td><span class="{{r.pill}}">{{r.status}}</span></td></tr>
+</sc-for>
+</tbody>
+</table>
+</section>
+<aside class="panel" aria-label="Booking details">
+<div class="panel-h"><h2>{{cur.ref}}</h2><span class="{{cur.pill}}">{{cur.status}}</span></div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 18px">
+<div><p style="margin: 0; font-size: 20px; font-weight: 600">{{cur.guest}}</p><p class="small muted" style="margin: 2px 0 0">{{cur.phone}} · {{cur.email}}</p></div>
+<dl class="kv"><dt>Room</dt><dd>{{cur.room}}</dd><dt>Dates</dt><dd>{{cur.dates}}</dd><dt>Guests</dt><dd>2 adults</dd><dt>Source</dt><dd>{{cur.src}}</dd><dt>Total</dt><dd class="num"><strong>{{cur.total}}</strong></dd><dt>Payment</dt><dd>{{cur.pay}}</dd><dt>Request</dt><dd>Extra pillows, please.</dd></dl>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<button class="abtn dark">Confirm booking</button><button class="abtn">Check in</button>
+<button class="abtn">Record payment</button><button class="abtn">Move room</button>
+<button class="abtn">Send WhatsApp</button><button class="abtn" style="color: #A3291F">Cancel booking</button>
+</div>
+<div style="border-top: 1px solid #EEF0F0; padding-top: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 13px"><strong>History</strong><span class="muted">12 Oct, 21:14 · Booked on website</span><span class="muted">12 Oct, 21:15 · Confirmation email and WhatsApp sent</span><span class="muted">13 Oct, 09:02 · Viewed by Tolu A.</span></div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1200}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { sel: 1 }; }
+  renderVals() {
+    const data = [
+      ['SLM-26-0418','Adaeze Okafor','VIP Suite','14–16 Oct','Website','₦140,000','Checked in','p-ok','Paid at desk · POS'],
+      ['SLM-26-0421','Emeka Nwosu','Deluxe Room','14–15 Oct','Website','₦45,000','Needs confirmation','p-warn','Unpaid · due on arrival'],
+      ['SLM-26-0423','Funmi Adeyemi','Business Room','14–17 Oct','Phone','₦120,000','Confirmed','p-info','Paid by transfer'],
+      ['SLM-26-0424','Ibrahim Musa','Royal Suite','14–16 Oct','WhatsApp','₦130,000','Unpaid hold','p-bad','Hold until 18:00'],
+      ['SLM-26-0427','Chioma Eze','Penthouse','23–26 Oct','Website','₦225,000','Confirmed','p-info','Unpaid · due on arrival'],
+      ['SLM-26-0429','Bayo Ogunleye','Standard Room','24–27 Oct','Website','₦100,000','Needs confirmation','p-warn','Offer: long weekend'],
+      ['SLM-26-0401','Ruth Ade','Executive','10–12 Oct','Walk-in','₦100,000','Checked out','p-mute','Paid at desk']
+    ];
+    const sel = this.state.sel;
+    const rows = data.map((d, i) => ({
+      ref: d[0], guest: d[1], room: d[2], dates: d[3], src: d[4], total: d[5], status: d[6],
+      pill: 'pill ' + d[7], pay: d[8],
+      phone: '+234 80' + (3 + i) + ' 000 00' + (10 + i), email: d[1].split(' ')[0].toLowerCase() + '@example.com',
+      cls: i === sel ? 'sel' : '',
+      pick: () => this.setState({ sel: i })
+    }));
+    return { rows, cur: rows[sel] };
+  }
+}
+</script>
+</body>
+</html>

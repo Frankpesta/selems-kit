@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home — Selems Exclusive Hotel &amp; Suites</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&amp;family=Instrument+Sans:wght@400..700&amp;display=swap">
+<style>
+/* Ijapo Slate & Amber: slate-navy ink from the logo, cool stone ground, logo amber deepened for contrast */
+body{margin:0;background:#F3F4F2;color:#17222D;font-family:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#A4561B}a:hover{color:#7E3F12}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.disp{font-family:'Bodoni Moda',Didot,'Bodoni 72',Georgia,serif;font-weight:500;letter-spacing:-.01em;text-wrap:balance;margin:0;line-height:1.08}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:#5E6E79;margin:0}
+.lede{font-size:18px;color:#3B4B57;max-width:62ch;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:2px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;white-space:nowrap}
+.btn-amber{background:#A4561B;color:#fff}.btn-amber:hover{background:#86460F;color:#fff}
+.btn-line{border-color:#17222D;color:#17222D;background:transparent}.btn-line:hover{background:#17222D;color:#fff}
+.btn-light{border-color:rgba(243,244,242,.6);color:#F3F4F2;background:transparent}.btn-light:hover{background:#F3F4F2;color:#17222D}
+.nav{background:#F3F4F2;border-bottom:1px solid #DCE1E1;position:sticky;top:0;z-index:10}
+.nav-dark{background:#17222D;border-bottom-color:rgba(255,255,255,.12)}
+.util{background:#0F171E;color:#AEBBC3;font-size:13px}
+.utilin{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:38px;white-space:nowrap}
+.util a{color:#E6EAEC;text-decoration:none}.util a:hover{color:#E3A16A}
+.utilr{display:flex;gap:22px;align-items:center}
+.util .sep{width:1px;height:14px;background:rgba(255,255,255,.18)}
+.navin{display:flex;align-items:center;gap:40px;min-height:76px;flex-wrap:nowrap}
+.navbtn{flex:none}
+.brand{display:flex;flex-direction:column;text-decoration:none;color:inherit;line-height:1}
+.brand .w{font-family:'Bodoni Moda',Georgia,serif;font-size:30px;font-weight:600;letter-spacing:.02em}
+.brand .s{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;margin-top:6px;opacity:.75}
+.brand{flex:none}
+.links{display:flex;gap:30px;flex:1;justify-content:center;flex-wrap:nowrap;min-width:0}
+.links a{color:inherit;text-decoration:none;font-size:14.5px;font-weight:500;padding:6px 0;border-bottom:1px solid transparent;white-space:nowrap}
+.links a:hover,.links a.on{border-bottom-color:#A4561B;color:inherit}
+.navcta{display:flex;align-items:center;gap:20px}
+.tel{font-size:14px;font-variant-numeric:tabular-nums;opacity:.8}
+.burger{display:none;width:48px;height:48px;border:1px solid currentColor;background:transparent;color:inherit;border-radius:2px;align-items:center;justify-content:center;margin-left:auto}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.sec{padding-block:112px}
+.card{background:#fff;border:1px solid #DCE1E1}
+.ph{border:1px dashed #8C99A1;background:#E7EAE8;color:#4A5964;font-size:13px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
+.num{font-variant-numeric:tabular-nums}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#5E6E79}
+.field input,.field select,.field textarea{min-height:48px;border:1px solid #C9D0D2;background:#fff;border-radius:2px;padding:0 14px;font:inherit;color:#17222D}
+.field input:focus,.field select:focus,.field textarea:focus,.btn:focus-visible,a:focus-visible{outline:2px solid #A4561B;outline-offset:2px}
+.foot{background:#0F171E;color:#C9D1D5}
+.foot a{color:#E6EAEC;text-decoration:none}.foot a:hover{color:#E3A16A}
+.foot h3{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8FA0AA;margin:0 0 16px;font-weight:600}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px}
+@media (max-width:1100px){.links{display:none}.navbtn{display:none}.burger{display:inline-flex}}
+@media (max-width:980px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.util .addr,.util .hrs,.util .sep{display:none}.utilin{justify-content:flex-end}}
+@media (max-width:760px){.g2,.g3,.g4{grid-template-columns:minmax(0,1fr)}.sec{padding-block:72px}}
+.hero{background:#17222D;color:#F3F4F2}
+.herogrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:end;padding-block:72px 120px}
+.mosaic{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:260px 220px;gap:12px}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic .tall{grid-row:span 2}
+.bookbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:16px;align-items:end;padding:24px;margin-top:-64px;position:relative;box-shadow:0 18px 40px rgba(23,34,45,.12)}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #C9D0D2;border-bottom:1px solid #C9D0D2}
+.facts div{padding:28px 24px;border-left:1px solid #C9D0D2}
+.facts div:first-child{border-left:0}
+.room img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.amen{display:flex;gap:16px;align-items:flex-start;padding:24px 0;border-top:1px solid #DCE1E1}
+.amen svg{flex:none;color:#A4561B}
+details{border-top:1px solid #C9D0D2;padding:20px 0}
+details summary{font-weight:600;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+details p{margin:12px 0 0;color:#3B4B57;max-width:70ch}
+@media (max-width:980px){.herogrid{grid-template-columns:minmax(0,1fr);padding-block:48px 104px}.bookbar{grid-template-columns:repeat(2,minmax(0,1fr))}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(3){border-left:0}}
+@media (max-width:560px){.bookbar{grid-template-columns:minmax(0,1fr)}.mosaic{grid-template-rows:200px 160px}}
+</style>
+</helmet>
+<div>
+<div class="util"><div class="wrap utilin"><span class="addr">Atibiti Layout, Ijapo Extension, Akure</span><span class="utilr"><span class="hrs">Front office open 24/7</span><span class="sep" aria-hidden="true"></span><a href="tel:+2349031559943">+234 903 155 9943</a><span class="sep" aria-hidden="true"></span><a href="https://wa.me/2348147744484">WhatsApp</a></span></div></div>
+<header class="nav nav-dark" style="color: #F3F4F2">
+<div class="wrap navin">
+<a class="brand" href="Main.dc.html"><span class="w">Selems</span><span class="s">Exclusive Hotel &amp; Suites · Akure</span></a>
+<nav class="links" aria-label="Main">
+<a href="Rooms.dc.html">Rooms &amp; Suites</a>
+<a href="Dining.dc.html">Dining &amp; Bars</a>
+<a href="Facilities.dc.html">Facilities</a>
+<a href="Gallery.dc.html">Gallery</a>
+<a href="AkureGuide.dc.html">Akure Guide</a>
+<a href="Contact.dc.html">Contact</a>
+</nav>
+<a class="btn btn-amber navbtn" href="Booking.dc.html">Book a room</a>
+<button class="burger" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+</div>
+</header>
+
+<section class="hero" aria-labelledby="h1">
+<div class="wrap herogrid">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<p class="eyebrow" style="color: #E3A16A">Ijapo Extension · Akure, Ondo State</p>
+<h1 id="h1" class="disp" style="font-size: clamp(44px, 6vw, 84px)">A hotel and suites in Akure, kept to an international standard.</h1>
+<p class="lede" style="color: #C9D3D9">Nine room types from ₦35,000 a night, a restaurant serving Nigerian and continental dishes, two bars, and a front office that never closes.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap">
+<a class="btn btn-amber" href="Booking.dc.html">Check availability</a>
+<a class="btn btn-light" href="Rooms.dc.html">See rooms &amp; prices</a>
+</div>
+</div>
+<div class="mosaic">
+<img class="tall" src="../public/images/selems-hotel-akure-royal-suite-bed.jpg" alt="Royal Suite bedroom at Selems Exclusive Hotel, Akure, with upholstered headboard and white linen">
+<img src="../public/images/selems-hotel-akure-corridor-chandelier.jpg" alt="Hotel corridor with crystal chandelier and marble floor">
+<img src="../public/images/selems-hotel-akure-indoor-bar.jpg" alt="Indoor bar and lounge at Selems Exclusive Hotel">
+</div>
+</div>
+</section>
+
+<div class="wrap">
+<form class="card bookbar" aria-label="Check room availability">
+<div class="field"><label for="ci">Check-in</label><input id="ci" type="date" value="2026-10-24"></div>
+<div class="field"><label for="co">Check-out</label><input id="co" type="date" value="2026-10-26"></div>
+<div class="field"><label for="gu">Guests</label><select id="gu"><option>1 adult</option><option selected>2 adults</option><option>2 adults, 1 child</option><option>3 adults</option></select></div>
+<a class="btn btn-amber" href="Booking.dc.html" style="min-height: 50px">Check availability</a>
+</form>
+</div>
+
+<section class="sec" aria-labelledby="about">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 56px">
+<div class="g2" style="align-items: end">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p class="eyebrow">About the hotel</p>
+<h2 id="about" class="disp" style="font-size: 48px">Quiet rooms, a full kitchen and a team on duty all night.</h2>
+</div>
+<p class="lede">Selems Exclusive Hotel &amp; Suites sits in Atibiti Layout, Ijapo Extension, a calm residential part of Akure. Guests come for business, family events and weekends away. Every room has air conditioning, a smart TV with streaming apps and free Wi-Fi, and the front office handles late arrivals and requests at any hour.</p>
+</div>
+<div class="facts">
+<div><p class="disp num" style="font-size: 44px">9</p><p style="margin: 4px 0 0; color: #3B4B57">room and suite types</p></div>
+<div><p class="disp num" style="font-size: 44px">24/7</p><p style="margin: 4px 0 0; color: #3B4B57">front office and room service</p></div>
+<div><p class="disp num" style="font-size: 44px">2</p><p style="margin: 4px 0 0; color: #3B4B57">bars, indoor and outdoor</p></div>
+<div><p class="disp num" style="font-size: 44px">₦35k</p><p style="margin: 4px 0 0; color: #3B4B57">nightly rates start from</p></div>
+</div>
+</div>
+</section>
+
+<section class="sec" style="background: #fff; padding-block: 112px" aria-labelledby="rooms">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p class="eyebrow">Rooms &amp; suites</p>
+<h2 id="rooms" class="disp" style="font-size: 48px">Where you will sleep</h2>
+</div>
+<a class="btn btn-line" href="Rooms.dc.html">Compare all 9 rooms</a>
+</div>
+<div class="g3">
+<article class="room" style="display: flex; flex-direction: column; gap: 16px">
+<img src="../public/images/selems-hotel-akure-standard-room-bed.jpg" alt="Standard Room at Selems Exclusive Hotel, Akure: queen bed with grey tufted headboard">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><h3 class="disp" style="font-size: 26px">Standard Room</h3><p class="num" style="margin: 0; font-weight: 600">₦35,000<span style="font-weight: 400; color: #5E6E79"> / night</span></p></div>
+<p style="margin: 0; color: #3B4B57">1 bed · 1 bathroom · smart TV · free Wi-Fi</p>
+<a href="RoomDetail.dc.html" style="font-weight: 600">View room</a>
+</article>
+<article class="room" style="display: flex; flex-direction: column; gap: 16px">
+<img src="../public/images/selems-hotel-akure-deluxe-room-bed.jpg" alt="Deluxe Room with tan leather headboard and accent chair">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><h3 class="disp" style="font-size: 26px">Deluxe Room</h3><p class="num" style="margin: 0; font-weight: 600">₦45,000<span style="font-weight: 400; color: #5E6E79"> / night</span></p></div>
+<p style="margin: 0; color: #3B4B57">1 bed · 1 bathroom · work chair · free Wi-Fi</p>
+<a href="RoomDetail.dc.html" style="font-weight: 600">View room</a>
+</article>
+<article class="room" style="display: flex; flex-direction: column; gap: 16px">
+<img src="../public/images/selems-hotel-akure-vip-suite-bed.jpg" alt="VIP Suite bedroom with green velvet headboard">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><h3 class="disp" style="font-size: 26px">VIP Suite</h3><p class="num" style="margin: 0; font-weight: 600">₦70,000<span style="font-weight: 400; color: #5E6E79"> / night</span></p></div>
+<p style="margin: 0; color: #3B4B57">Suite · separate lounge · smart TV · free Wi-Fi</p>
+<a href="RoomDetail.dc.html" style="font-weight: 600">View room</a>
+</article>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="offer" style="background: #3F5A4C; color: #F1F3EF">
+<div class="wrap g2" style="padding-block: 88px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<p class="eyebrow" style="color: #CFDCCF">Current offer</p>
+<h2 id="offer" class="disp" style="font-size: 52px">The long weekend: 3 nights for ₦100,000</h2>
+<p class="lede" style="color: #DCE5DC">Arrive Friday, leave Monday. Breakfast and late checkout are [confirm what is included]. Offer terms are set in the admin panel and switch off automatically when they end.</p>
+<div><a class="btn btn-amber" href="Booking.dc.html">Book the offer</a></div>
+</div>
+<img src="../public/images/selems-hotel-akure-suite-living-area.jpg" alt="Suite living area with sage armchairs, coffee table and wall-mounted smart TV" style="width: 100%; aspect-ratio: 4/3; object-fit: cover">
+</div>
+</section>
+
+<section class="sec" aria-labelledby="dine">
+<div class="wrap g2" style="align-items: center; gap: 64px">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<img src="../public/images/selems-hotel-akure-restaurant-dining-room.jpg" alt="Selems restaurant dining room with booth seating" style="width: 100%; height: 420px; object-fit: cover">
+<img src="../public/images/selems-hotel-akure-bar-wine-display.jpg" alt="Wine and spirits display behind the hotel bar" style="width: 100%; height: 420px; object-fit: cover; margin-top: 56px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<p class="eyebrow">Dining &amp; bars</p>
+<h2 id="dine" class="disp" style="font-size: 48px">Local favourites and continental plates, at any hour.</h2>
+<p class="lede">The restaurant cooks local favourites and continental plates. Room service runs around the clock, and the indoor and outdoor bars stay open into the evening.</p>
+<div><a class="btn btn-line" href="Dining.dc.html">Dining &amp; bars</a></div>
+</div>
+</div>
+</section>
+
+<section style="background: #fff; padding-block: 112px" aria-labelledby="fac">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p class="eyebrow">Facilities</p>
+<h2 id="fac" class="disp" style="font-size: 48px">Included with every stay</h2>
+</div>
+<div class="g3" style="row-gap: 0">
+<div class="amen"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><h3 style="margin: 0; font-size: 17px">24/7 front office</h3><p style="margin: 4px 0 0; color: #3B4B57">Late check-ins and requests at any hour.</p></div></div>
+<div class="amen"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 17h16M6 17a6 6 0 0 1 12 0M12 9V7M10 7h4"/></svg><div><h3 style="margin: 0; font-size: 17px">24/7 room service</h3><p style="margin: 4px 0 0; color: #3B4B57">Breakfast in bed or a late snack.</p></div></div>
+<div class="amen"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 13a10 10 0 0 1 14 0M8.5 16.5a5 5 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/></svg><div><h3 style="margin: 0; font-size: 17px">Free high-speed Wi-Fi</h3><p style="margin: 4px 0 0; color: #3B4B57">Throughout the hotel, for calls and streaming.</p></div></div>
+<div class="amen"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="1"/><path d="M8 21h8"/></svg><div><h3 style="margin: 0; font-size: 17px">Smart TVs</h3><p style="margin: 4px 0 0; color: #3B4B57">Netflix, YouTube and more in every room.</p></div></div>
+<div class="amen"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 3v8a3 3 0 0 0 3 3v7M7 3v5M10 3v5M17 3c-2 2-2 6 0 8v10"/></svg><div><h3 style="margin: 0; font-size: 17px">Restaurant</h3><p style="margin: 4px 0 0; color: #3B4B57">Nigerian and continental menu.</p></div></div>
+<div class="amen"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 16l1-5h12l1 5M4 16h16v3H4zM7 19v2M17 19v2M8 11l1.5-4h5L16 11"/></svg><div><h3 style="margin: 0; font-size: 17px">Secure on-site parking</h3><p style="margin: 4px 0 0; color: #3B4B57">Gated forecourt with lighting.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="loc">
+<div class="wrap g2" style="gap: 56px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<p class="eyebrow">Location</p>
+<h2 id="loc" class="disp" style="font-size: 48px">Atibiti Layout, Ijapo Extension, Akure</h2>
+<p class="lede">A residential street off the main Ijapo road: quiet at night, with quick access to the city centre.</p>
+<ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column">
+<li style="display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px solid #C9D0D2"><span>Akure Airport</span><span class="num">[x km · x min]</span></li>
+<li style="display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px solid #C9D0D2"><span>Federal University of Technology, Akure</span><span class="num">[x km · x min]</span></li>
+<li style="display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px solid #C9D0D2"><span>Oja Oba market and the Deji's palace</span><span class="num">[x km · x min]</span></li>
+<li style="display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px solid #C9D0D2; border-bottom: 1px solid #C9D0D2"><span>Ondo State Government Secretariat, Alagbaka</span><span class="num">[x km · x min]</span></li>
+</ul>
+<div style="display: flex; gap: 12px; flex-wrap: wrap"><a class="btn btn-line" href="https://maps.google.com/?q=Selems+Exclusive+Hotel+Akure">Get directions</a><a class="btn btn-line" href="Contact.dc.html">Contact the hotel</a></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<img src="../public/images/selems-hotel-akure-exterior-front.jpg" alt="Front of Selems Exclusive Hotel &amp; Suites, Akure, with gated parking and flags" style="width: 100%; aspect-ratio: 16/9; object-fit: cover">
+<div class="ph" style="height: 260px">Google Map embed, pinned on the hotel's Google Business Profile listing</div>
+</div>
+</div>
+</section>
+
+<section style="background: #fff; padding-block: 112px" aria-labelledby="rev">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 16px"><p class="eyebrow">Guest reviews</p><h2 id="rev" class="disp" style="font-size: 48px">What guests say</h2></div>
+<p style="margin: 0; color: #3B4B57">[Google rating] from [n] reviews</p>
+</div>
+<div class="g3">
+<div class="ph" style="height: 220px">Review slot 1: real Google review, approved in admin</div>
+<div class="ph" style="height: 220px">Review slot 2: real Google review, approved in admin</div>
+<div class="ph" style="height: 220px">Review slot 3: guest review from the post-stay email</div>
+</div>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="faq">
+<div class="wrap g2" style="gap: 64px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 16px"><p class="eyebrow">Before you book</p><h2 id="faq" class="disp" style="font-size: 48px">Questions guests ask</h2><p class="lede">These answers are also published as FAQ data for Google.</p></div>
+<div>
+<details open><summary>What time are check-in and check-out?<span aria-hidden="true">–</span></summary><p>Check-in from [2:00 PM], check-out by [12:00 noon]. The front office is open 24 hours, so late arrivals are fine.</p></details>
+<details><summary>Is there parking at the hotel?<span aria-hidden="true">+</span></summary><p>Yes. Guests park free in the hotel's gated forecourt.</p></details>
+<details><summary>How do I pay?<span aria-hidden="true">+</span></summary><p>Reserve online with no payment, then pay at the front desk on arrival by cash, transfer or card. [Confirm options]</p></details>
+<details><summary>Can I cancel my booking?<span aria-hidden="true">+</span></summary><p>[Cancellation policy from the hotel]</p></details>
+<details style="border-bottom: 1px solid #C9D0D2"><summary>Do you host events or meetings?<span aria-hidden="true">+</span></summary><p>[Confirm event and meeting space]</p></details>
+</div>
+</div>
+</section>
+
+<footer class="foot">
+<div class="wrap" style="padding-block: 80px 32px; display: flex; flex-direction: column; gap: 56px">
+<div class="g4" style="gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<img src="../public/images/selems-logo.png" alt="Selems Exclusive Hotel &amp; Suites logo" style="width: 240px; height: auto">
+<p style="margin: 0; font-size: 15px">Atibiti Layout, Ijapo Extension, Akure, Ondo State, Nigeria</p>
+</div>
+<div><h3>Stay</h3><ul><li><a href="Rooms.dc.html">Rooms &amp; suites</a></li><li><a href="Booking.dc.html">Book a room</a></li><li><a href="Main.dc.html">Offers</a></li><li><a href="AkureGuide.dc.html">Where to stay in Akure</a></li></ul></div>
+<div><h3>Hotel</h3><ul><li><a href="Dining.dc.html">Dining &amp; bars</a></li><li><a href="Facilities.dc.html">Facilities</a></li><li><a href="Gallery.dc.html">Gallery</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></div>
+<div><h3>Reservations</h3><ul class="num"><li>+234 903 155 9943</li><li>+234 814 774 4484 (WhatsApp)</li><li>booking@selemsexclusivehotel.com</li><li><a href="https://instagram.com/selemsexclusivehotel">Instagram</a> · <a href="https://facebook.com/selemsexclusivehotel">Facebook</a></li></ul></div>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,.12); padding-top: 24px; font-size: 13px; color: #8FA0AA"><span>© 2026 Selems Exclusive Hotel &amp; Suites</span><span><a href="Contact.dc.html">Privacy</a> · <a href="Contact.dc.html">Booking terms</a></span></div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4700}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

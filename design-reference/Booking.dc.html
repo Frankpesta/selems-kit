@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Book a room — Selems Hotel Akure</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&amp;family=Instrument+Sans:wght@400..700&amp;display=swap">
+<style>
+body{margin:0}
+.bkg{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:48px;align-items:start}
+.sum{position:sticky;top:24px;padding:24px;display:flex;flex-direction:column;gap:16px}
+.opt{display:grid;grid-template-columns:180px minmax(0,1fr) auto;gap:20px;align-items:center;padding:14px;background:#fff;border:1px solid #DCE1E1;text-align:left;font:inherit;color:inherit;cursor:pointer;width:100%}
+.opt img{width:180px;height:120px;object-fit:cover}
+.opt.sel{border-color:#A4561B;box-shadow:inset 0 0 0 1px #A4561B;background:#FFFBF7}
+.opt:disabled{opacity:.55;cursor:not-allowed}
+.pay{display:flex;gap:16px;align-items:flex-start;padding:20px;border:1px solid #DCE1E1;background:#fff;text-align:left;font:inherit;color:inherit;cursor:pointer;width:100%}
+.pay.sel{border-color:#A4561B;box-shadow:inset 0 0 0 1px #A4561B;background:#FFFBF7}
+.dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid #9AA7AE;margin-top:2px}
+.sel .dot{border:6px solid #A4561B}
+.steps{display:flex;gap:28px;flex-wrap:wrap}
+@media (max-width:980px){.bkg{grid-template-columns:minmax(0,1fr)}.sum{position:static}}
+@media (max-width:620px){.opt{grid-template-columns:minmax(0,1fr)}.opt img{width:100%;height:180px}}
+</style>
+</helmet>
+<div>
+<header class="nav" style="position: static">
+<div class="wrap navin" style="justify-content: space-between">
+<a class="brand" href="Main.dc.html"><span class="w">Selems</span><span class="s">Exclusive Hotel &amp; Suites · Akure</span></a>
+<p class="small" style="margin: 0; display: flex; gap: 8px; align-items: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Secure booking · Help: <span class="num" style="font-weight: 600">+234 903 155 9943</span></p>
+</div>
+</header>
+
+<div class="wrap" style="padding-block: 40px 96px; display: flex; flex-direction: column; gap: 32px">
+<div class="steps" aria-label="Booking progress">
+<span class="{{c1}}"><b>1</b>Dates</span><span class="{{c2}}"><b>2</b>Room</span><span class="{{c3}}"><b>3</b>Your details</span><span class="{{c4}}"><b>4</b>Review</span><span class="{{c5}}"><b>5</b>Confirmed</span>
+</div>
+
+<div class="bkg">
+<div style="display: flex; flex-direction: column; gap: 24px; min-width: 0">
+
+<sc-if value="{{s1}}" hint-placeholder-val="{{ true }}">
+<h1 class="disp" style="font-size: 44px">When are you staying?</h1>
+<div class="card" style="padding: 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<div class="field"><label for="b1">Check-in</label><input id="b1" type="date" value="2026-10-24"></div>
+<div class="field"><label for="b2">Check-out</label><input id="b2" type="date" value="2026-10-26"></div>
+<div class="field"><label for="b3">Guests</label><select id="b3"><option>1 adult</option><option selected>2 adults</option><option>2 adults, 1 child</option></select></div>
+</div>
+<p class="muted" style="margin: 0">2 nights · Saturday 24 to Monday 26 October 2026</p>
+<div><button class="btn btn-amber" onClick="{{go2}}">Show available rooms</button></div>
+</sc-if>
+
+<sc-if value="{{s2}}" hint-placeholder-val="{{ false }}">
+<h1 class="disp" style="font-size: 44px">Choose a room</h1>
+<p class="muted" style="margin: 0">Prices for 2 nights, 24–26 Oct, 2 adults.</p>
+<button class="{{o1}}" onClick="{{p1}}"><img src="../public/images/selems-hotel-akure-standard-room-bed.jpg" alt="Standard Room"><span><strong style="font-size: 18px">Standard Room</strong><br><span class="muted small">1 bed · smart TV · Wi-Fi · 3 left</span></span><span class="num" style="text-align: right"><strong>₦70,000</strong><br><span class="muted small">₦35,000 / night</span></span></button>
+<button class="{{o2}}" onClick="{{p2}}"><img src="../public/images/selems-hotel-akure-deluxe-room-bed.jpg" alt="Deluxe Room"><span><strong style="font-size: 18px">Deluxe Room</strong><br><span class="muted small">1 bed · accent chair · Wi-Fi</span></span><span class="num" style="text-align: right"><strong>₦90,000</strong><br><span class="muted small">₦45,000 / night</span></span></button>
+<button class="{{o3}}" onClick="{{p3}}"><img src="../public/images/selems-hotel-akure-vip-suite-bed.jpg" alt="VIP Suite"><span><strong style="font-size: 18px">VIP Suite</strong><br><span class="muted small">Suite · separate lounge · 1 left</span></span><span class="num" style="text-align: right"><strong>₦140,000</strong><br><span class="muted small">₦70,000 / night</span></span></button>
+<button class="opt" disabled><img src="../public/images/selems-hotel-akure-room-mood-lighting.jpg" alt="Penthouse"><span><strong style="font-size: 18px">Penthouse</strong><br><span class="muted small">Booked for these dates</span></span><span class="small" style="text-align: right">Sold out</span></button>
+<div style="display: flex; gap: 12px"><button class="btn btn-line" onClick="{{go1}}">Back</button><button class="btn btn-amber" onClick="{{go3}}">Continue</button></div>
+</sc-if>
+
+<sc-if value="{{s3}}" hint-placeholder-val="{{ false }}">
+<h1 class="disp" style="font-size: 44px">Your details</h1>
+<div class="card" style="padding: 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<div class="field"><label for="d1">First name</label><input id="d1" value="Adaeze"></div>
+<div class="field"><label for="d2">Last name</label><input id="d2" value="Okafor"></div>
+<div class="field"><label for="d3">Email</label><input id="d3" type="email" value="adaeze@example.com"></div>
+<div class="field"><label for="d4">Phone (WhatsApp)</label><input id="d4" type="tel" value="+234 803 000 0000"></div>
+<div class="field"><label for="d5">Expected arrival time</label><select id="d5"><option>12:00 – 14:00</option><option selected>14:00 – 18:00</option><option>After 18:00</option></select></div>
+<div class="field"><label for="d6">Purpose of stay</label><select id="d6"><option>Business</option><option selected>Leisure</option><option>Event</option></select></div>
+<div class="field" style="grid-column: 1 / -1"><label for="d7">Special requests (optional)</label><textarea id="d7">Extra pillows, please.</textarea></div>
+</div>
+<p class="muted small" style="margin: 0">Example details shown. We send your confirmation to this email and WhatsApp number.</p>
+<div style="display: flex; gap: 12px"><button class="btn btn-line" onClick="{{go2}}">Back</button><button class="btn btn-amber" onClick="{{go4}}">Review booking</button></div>
+</sc-if>
+
+<sc-if value="{{s4}}" hint-placeholder-val="{{ false }}">
+<h1 class="disp" style="font-size: 44px">Review and reserve</h1>
+<div class="pay sel" style="cursor: default"><span class="dot"></span><span><strong>No payment now. Pay at the hotel.</strong><br><span class="muted small">Your room is reserved the moment you confirm. Pay at the front desk on arrival by cash, transfer or card. If you have not arrived by [8:00 PM] on your arrival day and have not called us, the room may be released.</span></span></div>
+<ul class="list small" style="background: #fff; padding: 0 20px; border: 1px solid #DCE1E1"><li><span>Guest</span><span>Adaeze Okafor · +234 803 000 0000</span></li><li><span>Arrival</span><span>Sat 24 Oct, 14:00 – 18:00</span></li><li><span>Special requests</span><span>Extra pillows, please.</span></li></ul>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px"><input id="agree" type="checkbox" checked style="width: 18px; height: 18px; margin-top: 3px">I agree to the booking terms and cancellation policy.</label>
+<div style="display: flex; gap: 12px"><button class="btn btn-line" onClick="{{go3}}">Back</button><button class="btn btn-amber" onClick="{{go5}}">{{payLabel}}</button></div>
+</sc-if>
+
+<sc-if value="{{s5}}" hint-placeholder-val="{{ false }}">
+<div class="card" style="padding: 40px; display: flex; flex-direction: column; gap: 20px">
+<span style="width: 56px; height: 56px; border-radius: 50%; background: #E3EFE6; color: #1F6A3A; display: inline-flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>
+<h1 class="disp" style="font-size: 44px">You are booked, Adaeze.</h1>
+<p class="lede">Booking reference <strong class="num">SLM-26-0418</strong>. A confirmation is on its way to adaeze@example.com and your WhatsApp.</p>
+<ul class="list"><li><span>Room</span><strong>{{roomName}}</strong></li><li><span>Dates</span><span>Sat 24 – Mon 26 Oct 2026 · 2 nights</span></li><li><span>Guests</span><span>2 adults</span></li><li style="border-bottom: 1px solid #DCE1E1"><span>{{paidLabel}}</span><strong class="num">{{total}}</strong></li></ul>
+<div style="display: flex; gap: 12px; flex-wrap: wrap"><a class="btn btn-line" href="Main.dc.html">Back to home</a><a class="btn btn-line" href="Contact.dc.html">Directions to the hotel</a><button class="btn btn-amber" onClick="{{go1}}">Start again</button></div>
+</div>
+</sc-if>
+</div>
+
+<aside class="card sum" aria-label="Booking summary">
+<p class="eyebrow">Your stay</p>
+<img src="{{roomImg}}" alt="{{roomName}}" style="width: 100%; height: 170px; object-fit: cover">
+<h2 class="disp" style="font-size: 26px">{{roomName}}</h2>
+<ul class="list num small"><li><span>Check-in</span><span>Sat 24 Oct, from [2 PM]</span></li><li><span>Check-out</span><span>Mon 26 Oct, by [noon]</span></li><li><span>Guests</span><span>2 adults</span></li><li><span>{{rateLine}}</span><span>{{total}}</span></li><li style="border-bottom: 1px solid #DCE1E1; font-weight: 600; font-size: 16px"><span>Total</span><span>{{total}}</span></li></ul>
+<p class="muted small" style="margin: 0">Free cancellation until [48 hours] before arrival. [Confirm policy]</p>
+</aside>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { step: 1, room: 3, pay: 1 }; }
+  renderVals() {
+    const s = this.state.step, r = this.state.room, y = this.state.pay;
+    const rooms = {
+      1: { n: 'Standard Room', p: 35000, img: '../public/images/selems-hotel-akure-standard-room-bed.jpg' },
+      2: { n: 'Deluxe Room', p: 45000, img: '../public/images/selems-hotel-akure-deluxe-room-bed.jpg' },
+      3: { n: 'VIP Suite', p: 70000, img: '../public/images/selems-hotel-akure-vip-suite-bed.jpg' }
+    };
+    const rm = rooms[r];
+    const fmt = (v) => '₦' + v.toLocaleString('en-NG');
+    const st = (i) => 'step' + (s === i ? ' on' : s > i ? ' done' : '');
+    const go = (i) => () => this.setState({ step: i });
+    return {
+      s1: s === 1, s2: s === 2, s3: s === 3, s4: s === 4, s5: s === 5,
+      c1: st(1), c2: st(2), c3: st(3), c4: st(4), c5: st(5),
+      go1: go(1), go2: go(2), go3: go(3), go4: go(4), go5: go(5),
+      o1: 'opt' + (r === 1 ? ' sel' : ''), o2: 'opt' + (r === 2 ? ' sel' : ''), o3: 'opt' + (r === 3 ? ' sel' : ''),
+      p1: () => this.setState({ room: 1 }), p2: () => this.setState({ room: 2 }), p3: () => this.setState({ room: 3 }),
+      y1: 'pay' + (y === 1 ? ' sel' : ''), y2: 'pay' + (y === 2 ? ' sel' : ''),
+      pay1: () => this.setState({ pay: 1 }), pay2: () => this.setState({ pay: 2 }),
+      roomName: rm.n, roomImg: rm.img,
+      rateLine: fmt(rm.p) + ' × 2 nights',
+      total: fmt(rm.p * 2),
+      payLabel: 'Reserve — pay at the hotel',
+      paidLabel: 'Due at the hotel'
+    };
+  }
+}
+</script>
+</body>
+</html>

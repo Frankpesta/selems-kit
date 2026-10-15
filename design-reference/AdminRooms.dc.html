@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rooms &amp; rates — Selems admin</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&amp;family=Instrument+Sans:wght@400..700&amp;display=swap">
+<style>body{margin:0}
+.rr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:24px;align-items:start}
+.rate{width:110px;text-align:right}
+.tog{width:40px;height:22px;border-radius:999px;background:#1F6A3A;position:relative;display:inline-block;vertical-align:middle;border:0;cursor:pointer}
+.tog::after{content:"";position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;background:#fff}
+.tog.off{background:#B9C2C7}.tog.off::after{right:auto;left:3px}
+.fg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fl{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#3B4B57;min-width:0}
+.fl .input,.fl textarea{width:100%;font-weight:400}
+.fl textarea{min-height:96px;border:1px solid #C9D0D2;border-radius:4px;padding:10px 12px;font:inherit;font-size:14px}
+.ph4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.ph4 figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.ph4 img{width:100%;height:84px;object-fit:cover;border-radius:4px}
+@media (max-width:1200px){.rr{grid-template-columns:minmax(0,1fr)}}
+</style>
+</helmet>
+<div class="adm">
+<aside class="side">
+<a class="brand" href="AdminDashboard.dc.html"><span class="w">Selems</span><span class="s">Admin</span></a>
+<nav aria-label="Admin">
+<a href="AdminDashboard.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>Today</a>
+<a href="AdminReservations.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Reservations</a>
+<a href="AdminCalendar.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Availability</a>
+<a class="on" href="AdminRooms.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V7h5v3"/></svg>Rooms &amp; rates</a>
+<p class="grp">Website</p>
+<a href="AdminContent.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M9 12h6M9 16h6"/></svg>Content &amp; SEO</a>
+<p class="grp">Hotel</p>
+<a href="AdminDashboard.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>Staff &amp; settings</a>
+</nav>
+</aside>
+
+<main class="main">
+<div class="topbar">
+<div><h1>Rooms &amp; rates</h1><p class="small muted" style="margin: 0">Prices you save here show on the website straight away.</p></div>
+<button class="abtn pri">Add room type</button>
+</div>
+<div class="pane">
+<div class="rr">
+<section class="panel">
+<div class="panel-h"><h2>Room types</h2><span class="small muted">Nightly rate in ₦</span></div>
+<div class="tbl-wrap"><table class="tbl">
+<thead><tr><th>Room</th><th>Units</th><th style="text-align: right">Weekday</th><th style="text-align: right">Weekend</th><th>On site</th></tr></thead>
+<tbody>
+<tr><td>Standard Room</td><td>[4]</td><td style="text-align: right">35,000</td><td style="text-align: right">35,000</td><td><button class="tog" aria-label="Standard Room shown on website"></button></td></tr>
+<tr><td>Business Room</td><td>[3]</td><td style="text-align: right">40,000</td><td style="text-align: right">40,000</td><td><button class="tog" aria-label="Business Room shown on website"></button></td></tr>
+<tr><td>Deluxe Room</td><td>[4]</td><td style="text-align: right">45,000</td><td style="text-align: right">45,000</td><td><button class="tog" aria-label="Deluxe Room shown on website"></button></td></tr>
+<tr><td>Executive</td><td>[3]</td><td style="text-align: right">50,000</td><td style="text-align: right">50,000</td><td><button class="tog" aria-label="Executive shown on website"></button></td></tr>
+<tr><td>Executive Double</td><td>[2]</td><td style="text-align: right">55,000</td><td style="text-align: right">55,000</td><td><button class="tog" aria-label="Executive Double shown on website"></button></td></tr>
+<tr><td>Diplomatic Suite</td><td>[2]</td><td style="text-align: right">60,000</td><td style="text-align: right">60,000</td><td><button class="tog" aria-label="Diplomatic Suite shown on website"></button></td></tr>
+<tr><td>Royal Suite</td><td>[2]</td><td style="text-align: right">65,000</td><td style="text-align: right">65,000</td><td><button class="tog" aria-label="Royal Suite shown on website"></button></td></tr>
+<tr class="sel"><td><strong>VIP Suite</strong></td><td>[2]</td><td style="text-align: right">70,000</td><td style="text-align: right">75,000</td><td><button class="tog" aria-label="VIP Suite shown on website"></button></td></tr>
+<tr><td>Penthouse</td><td>[1]</td><td style="text-align: right">75,000</td><td style="text-align: right">75,000</td><td><button class="tog" aria-label="Penthouse shown on website"></button></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="panel" aria-label="Edit VIP Suite">
+<div class="panel-h"><h2>Edit: VIP Suite</h2><span class="pill p-warn">Unsaved changes</span></div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 22px">
+<div class="fg">
+<label class="fl">Room name<input class="input" id="rn" value="VIP Suite"></label>
+<label class="fl">Web address<input class="input" id="rs" value="/rooms/vip-suite"></label>
+<label class="fl">Weekday rate (₦)<input class="input num" id="r1" value="70,000"></label>
+<label class="fl">Weekend rate, Fri–Sat (₦)<input class="input num" id="r2" value="75,000"></label>
+<label class="fl">Units of this type<input class="input num" id="r3" value="2"></label>
+<label class="fl">Maximum guests<input class="input num" id="r4" value="2"></label>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center"><strong style="font-size: 14px">Special-date rates</strong><button class="abtn">Add date range</button></div>
+<ul class="list small" style="margin: 0"><li><span>20 Dec 2026 – 3 Jan 2027 · Festive season</span><span class="num">₦85,000</span></li><li style="border-bottom: 1px solid #EEF0F0"><span>FUTA convocation week · [dates]</span><span class="num">₦80,000</span></li></ul>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center"><strong style="font-size: 14px">Photos · drag to reorder, first is the cover</strong><button class="abtn">Upload</button></div>
+<div class="ph4">
+<figure><img src="../public/images/selems-hotel-akure-vip-suite-bed.jpg" alt="Cover photo"><input class="input" id="a1" value="VIP Suite bedroom, green velvet headboard" aria-label="Alt text for photo 1" style="min-height: 32px; font-size: 12px"></figure>
+<figure><img src="../public/images/selems-hotel-akure-suite-lounge-tv.jpg" alt="Photo 2"><input class="input" id="a2" value="VIP Suite lounge with smart TV" aria-label="Alt text for photo 2" style="min-height: 32px; font-size: 12px"></figure>
+<figure><img src="../public/images/selems-hotel-akure-suite-living-area.jpg" alt="Photo 3"><input class="input" id="a3" value="Sitting area" aria-label="Alt text for photo 3" style="min-height: 32px; font-size: 12px"></figure>
+<figure><img src="../public/images/selems-hotel-akure-executive-suite-lounge.jpg" alt="Photo 4"><input class="input" id="a4" value="" placeholder="Describe this photo" aria-label="Alt text for photo 4" style="min-height: 32px; font-size: 12px; border-color: #A3291F"></figure>
+</div>
+<p class="small" style="margin: 0; color: #A3291F">Photo 4 needs a description before it can go live. Descriptions help Google show your photos.</p>
+</div>
+<label class="fl">Description<textarea id="rd">A bedroom with a deep green velvet headboard, opening onto a lounge with sofas and a large smart TV.</textarea></label>
+<div style="display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 14px">Amenities</strong>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="chip on">Smart TV</span><span class="chip on">Wi-Fi</span><span class="chip on">Air conditioning</span><span class="chip on">Lounge</span><span class="chip on">Work desk</span><span class="chip">Bathtub</span><span class="chip">Mini fridge</span><span class="chip">Balcony</span></div></div>
+<div style="display: flex; justify-content: flex-end; gap: 10px; border-top: 1px solid #EEF0F0; padding-top: 16px"><button class="abtn">Discard</button><button class="abtn">Preview page</button><button class="abtn pri">Save changes</button></div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

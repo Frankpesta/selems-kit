@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phone home — Selems Hotel</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&amp;family=Instrument+Sans:wght@400..700&amp;display=swap">
+<style>body{margin:0}
+.hs{display:flex;gap:12px;overflow-x:auto;padding:0 20px 8px;scroll-snap-type:x mandatory}
+.hs article{flex:none;width:270px;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
+.hs img{width:270px;height:200px;object-fit:cover}
+</style>
+</helmet>
+<div style="width: 390px; height: 2700px; position: relative; overflow: hidden; background: #F3F4F2; color: #17222D; font-family: 'Instrument Sans', system-ui, sans-serif">
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: #17222D; color: #F3F4F2">
+<a class="brand" href="MobileHome.dc.html" style="color: #F3F4F2"><span class="w" style="font-size: 24px">Selems</span><span class="s" style="font-size: 9px">Hotel &amp; Suites · Akure</span></a>
+<div style="display: flex; gap: 8px"><a class="burger" href="Contact.dc.html" aria-label="Call the hotel" style="display: inline-flex; color: #F3F4F2; width: 44px; height: 44px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a><button class="burger" aria-label="Open menu" style="display: inline-flex; width: 44px; height: 44px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button></div>
+</header>
+<div style="background: #17222D; color: #F3F4F2; padding: 8px 20px 72px; display: flex; flex-direction: column; gap: 18px">
+<img src="../public/images/selems-hotel-akure-royal-suite-bed.jpg" alt="Royal Suite bedroom" style="width: 100%; height: 240px; object-fit: cover">
+<p class="eyebrow" style="color: #E3A16A">Ijapo Extension · Akure</p>
+<h1 class="disp" style="font-size: 38px">A hotel and suites in Akure, kept to an international standard.</h1>
+<p style="margin: 0; color: #C9D3D9">Nine room types from ₦35,000 a night, a restaurant, two bars and a 24-hour front office.</p>
+</div>
+<form class="card" style="margin: -48px 20px 0; padding: 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; position: relative; box-shadow: 0 14px 30px rgba(23,34,45,.12)" aria-label="Check availability">
+<div class="field"><label for="m1">Check-in</label><input id="m1" type="date" value="2026-10-24"></div>
+<div class="field"><label for="m2">Check-out</label><input id="m2" type="date" value="2026-10-26"></div>
+<div class="field" style="grid-column: 1 / -1"><label for="m3">Guests</label><select id="m3"><option>2 adults</option></select></div>
+<a class="btn btn-amber" href="MobileBooking.dc.html" style="grid-column: 1 / -1">Check availability</a>
+</form>
+<div style="padding: 48px 20px 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0">
+<div style="padding: 16px 12px 16px 0; border-bottom: 1px solid #C9D0D2"><p class="disp num" style="font-size: 32px">9</p><p class="small muted" style="margin: 0">room types</p></div>
+<div style="padding: 16px 0 16px 12px; border-bottom: 1px solid #C9D0D2; border-left: 1px solid #C9D0D2"><p class="disp num" style="font-size: 32px">24/7</p><p class="small muted" style="margin: 0">front office</p></div>
+<div style="padding: 16px 12px 16px 0"><p class="disp num" style="font-size: 32px">2</p><p class="small muted" style="margin: 0">bars</p></div>
+<div style="padding: 16px 0 16px 12px; border-left: 1px solid #C9D0D2"><p class="disp num" style="font-size: 32px">₦35k</p><p class="small muted" style="margin: 0">rates from</p></div>
+</div>
+<section style="padding: 32px 0; background: #fff; display: flex; flex-direction: column; gap: 18px">
+<div style="padding: 0 20px; display: flex; justify-content: space-between; align-items: end"><h2 class="disp" style="font-size: 30px">Rooms &amp; suites</h2><a href="Rooms.dc.html" class="small" style="font-weight: 600">All 9</a></div>
+<div class="hs">
+<article><img src="../public/images/selems-hotel-akure-standard-room-bed.jpg" alt="Standard Room"><div style="display: flex; justify-content: space-between"><strong>Standard Room</strong><span class="num">₦35,000</span></div></article>
+<article><img src="../public/images/selems-hotel-akure-deluxe-room-bed.jpg" alt="Deluxe Room"><div style="display: flex; justify-content: space-between"><strong>Deluxe Room</strong><span class="num">₦45,000</span></div></article>
+<article><img src="../public/images/selems-hotel-akure-vip-suite-bed.jpg" alt="VIP Suite"><div style="display: flex; justify-content: space-between"><strong>VIP Suite</strong><span class="num">₦70,000</span></div></article>
+</div>
+</section>
+<section style="background: #3F5A4C; color: #F1F3EF; padding: 36px 20px; display: flex; flex-direction: column; gap: 14px">
+<p class="eyebrow" style="color: #CFDCCF">Current offer</p>
+<h2 class="disp" style="font-size: 32px">The long weekend: 3 nights for ₦100,000</h2>
+<a class="btn btn-amber" href="MobileBooking.dc.html" style="align-self: flex-start">Book the offer</a>
+</section>
+<section style="padding: 36px 20px; display: flex; flex-direction: column; gap: 14px">
+<h2 class="disp" style="font-size: 30px">Dining &amp; bars</h2>
+<img src="../public/images/selems-hotel-akure-indoor-bar.jpg" alt="Indoor bar" style="width: 100%; height: 220px; object-fit: cover">
+<p class="muted" style="margin: 0">Nigerian and continental cooking, 24-hour room service, indoor and outdoor bars.</p>
+</section>
+<section style="padding: 8px 20px 36px; display: flex; flex-direction: column">
+<h2 class="disp" style="font-size: 30px; margin-bottom: 8px">Included</h2>
+<p class="amen" style="margin: 0; padding: 14px 0">24/7 front office and room service</p>
+<p class="amen" style="margin: 0; padding: 14px 0">Free Wi-Fi and smart TVs</p>
+<p class="amen" style="margin: 0; padding: 14px 0">Free, gated parking</p>
+</section>
+<section style="background: #fff; padding: 36px 20px; display: flex; flex-direction: column; gap: 14px">
+<h2 class="disp" style="font-size: 30px">Find us</h2>
+<p style="margin: 0">Atibiti Layout, Ijapo Extension, Akure, Ondo State</p>
+<div class="ph" style="height: 180px">Google Map</div>
+<a class="btn btn-line" href="Contact.dc.html">Get directions</a>
+</section>
+<footer class="foot" style="padding: 32px 20px 120px; font-size: 14px; display: flex; flex-direction: column; gap: 8px"><span>Selems Exclusive Hotel &amp; Suites</span><span class="num">+234 903 155 9943</span><span>booking@selemsexclusivehotel.com</span></footer>
+<div style="position: absolute; left: 0; right: 0; top: 768px; height: 76px; background: #fff; border-top: 1px solid #DCE1E1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 16px; box-shadow: 0 -8px 20px rgba(23,34,45,.08)">
+<div><p class="small muted" style="margin: 0">From</p><p class="num" style="margin: 0; font-weight: 700">₦35,000 / night</p></div>
+<a class="btn btn-amber" href="MobileBooking.dc.html">Book a room</a>
+</div>
+<div style="position: absolute; left: 0; right: 0; top: 844px; border-top: 1px dashed #A4561B"></div>
+<p style="position: absolute; right: 8px; top: 848px; margin: 0; font-size: 11px; color: #A4561B">first screen ends · sticky book bar stays pinned</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":2700}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+{
+  "_readme": "Launch content for Convex seeding (convex/seed.ts). Money is in kobo. Any string containing [CONFIRM] must not be published: seed sets published=false or leaves the setting unset. Room units are development placeholders until the hotel supplies its room list.",
+
+  "settings": {
+    "hotelName": "Selems Exclusive Hotel & Suites",
+    "address": { "street": "Atibiti Layout, Ijapo Extension", "locality": "Akure", "region": "Ondo State", "country": "NG" },
+    "geo": null,
+    "phones": [
+      { "label": "Front office", "number": "+2349031559943", "whatsapp": false },
+      { "label": "Reservations & WhatsApp", "number": "+2348147744484", "whatsapp": true }
+    ],
+    "emails": { "booking": "booking@selemsexclusivehotel.com", "info": "info@selemsexclusivehotel.com" },
+    "checkInTime": null,
+    "checkOutTime": null,
+    "noShowCutoff": "20:00",
+    "autoCancelNoShows": false,
+    "cancellationPolicy": null,
+    "freeCancellationHours": null,
+    "childrenPolicy": null,
+    "taxNote": null,
+    "maxNights": 30,
+    "bookingWindowDays": 365,
+    "socials": { "facebook": null, "instagram": "https://instagram.com/selemsexclusivehotel", "x": null, "tiktok": null },
+    "googleBusinessUrl": null,
+    "googleReviewUrl": null,
+    "mapEmbedUrl": null,
+    "_confirm": ["geo", "checkInTime (old canvas showed 14:00)", "checkOutTime (12:00?)", "cancellationPolicy", "freeCancellationHours", "childrenPolicy", "taxNote", "socials (old links misspelled)", "googleBusinessUrl", "googleReviewUrl", "which number is correct: 0903 155 9943 or 0913 155 9943"]
+  },
+
+  "roomTypes": [
+    {
+      "name": "Standard Room", "slug": "standard-room", "category": "room", "sortOrder": 1, "featured": true,
+      "baseRate": 3500000, "weekendRate": null, "maxAdults": 2, "maxChildren": 1, "sizeSqm": null,
+      "facts": ["1 bed", "1 bathroom", "Sleeps 2"],
+      "amenities": ["Air conditioning", "Smart TV with streaming apps", "Free Wi-Fi", "24-hour room service", "En-suite bathroom", "Daily housekeeping"],
+      "shortDescription": "A calm, well-kept room with everything you need for a night or a working week in Akure.",
+      "description": "Our Standard Room is the simplest way to stay at Selems without giving up comfort. A queen-size bed with a grey tufted headboard, crisp white linen, an armchair and a bedside table set the tone. The room is air-conditioned, has a smart TV with Netflix and YouTube, and fast Wi-Fi for calls and streaming. Room service runs 24 hours, and the front office is always open if you arrive late. A good choice for solo business travellers and couples on a short stay.",
+      "images": [{ "src": "/images/selems-hotel-akure-standard-room-bed.jpg", "alt": "Standard Room with grey tufted headboard at Selems Hotel, Akure", "width": 2400, "height": 1646 }],
+      "seoTitle": "Standard Room in Akure — ₦35,000/night | Selems Hotel",
+      "seoDescription": "Air-conditioned Standard Room in Ijapo Extension, Akure, with smart TV, free Wi-Fi and 24/7 room service. Reserve now, pay at the hotel."
+    },
+    {
+      "name": "Business Room", "slug": "business-room", "category": "room", "sortOrder": 2, "featured": false,
+      "baseRate": 4000000, "weekendRate": null, "maxAdults": 2, "maxChildren": 1, "sizeSqm": null,
+      "facts": ["1 bed", "1 bathroom", "Work desk", "Sleeps 2"],
+      "amenities": ["Air conditioning", "Work desk and chair", "Smart TV with streaming apps", "Free Wi-Fi", "24-hour room service", "En-suite bathroom"],
+      "shortDescription": "Set up for working trips: a proper desk, fast Wi-Fi and a quiet room to sleep in.",
+      "description": "The Business Room is built around the working day. Alongside a comfortable bed with a padded headboard and reading lamps on both sides, you get a desk and chair for laptop work, high-speed Wi-Fi for video meetings, and a smart TV to switch off with in the evening. Room service is available at any hour, so a late dinner after meetings in Alagbaka or at FUTA is never a problem.",
+      "images": [{ "src": "/images/selems-hotel-akure-business-room-bed.jpg", "alt": "Business Room with padded headboard and bedside lamps", "width": 2400, "height": 1865 }],
+      "seoTitle": "Business Room in Akure — ₦40,000/night | Selems Hotel",
+      "seoDescription": "A quiet room with a work desk and fast Wi-Fi for business trips to Akure. Smart TV, 24/7 room service. Reserve now, pay at the hotel."
+    },
+    {
+      "name": "Deluxe Room", "slug": "deluxe-room", "category": "room", "sortOrder": 3, "featured": true,
+      "baseRate": 4500000, "weekendRate": null, "maxAdults": 2, "maxChildren": 1, "sizeSqm": null,
+      "facts": ["1 bed", "1 bathroom", "Accent chair", "Sleeps 2"],
+      "amenities": ["Air conditioning", "Smart TV with streaming apps", "Free Wi-Fi", "24-hour room service", "En-suite bathroom", "Accent chair"],
+      "shortDescription": "Warm tan leather, a statement headboard and a little more room to relax.",
+      "description": "The Deluxe Room brings warmth to the Selems palette with a tan leather headboard, matching accent chair and soft white bedding. There is space to unpack properly and relax after a long drive into Akure. As in every room, you have air conditioning, a smart TV with streaming apps, free Wi-Fi and 24-hour room service, with the restaurant and bars a short walk downstairs.",
+      "images": [{ "src": "/images/selems-hotel-akure-deluxe-room-bed.jpg", "alt": "Deluxe Room with tan leather headboard and accent chair", "width": 2400, "height": 1602 }],
+      "seoTitle": "Deluxe Room in Akure — ₦45,000/night | Selems Hotel",
+      "seoDescription": "Deluxe Room with leather headboard, smart TV and free Wi-Fi in Ijapo Extension, Akure. 24/7 front office and room service. Pay at the hotel."
+    },
+    {
+      "name": "Executive", "slug": "executive", "category": "room", "sortOrder": 4, "featured": false,
+      "baseRate": 5000000, "weekendRate": null, "maxAdults": 2, "maxChildren": 1, "sizeSqm": null,
+      "facts": ["1 bed", "1 bathroom", "Sitting area", "Sleeps 2"],
+      "amenities": ["Air conditioning", "Sitting area", "Smart TV with streaming apps", "Free Wi-Fi", "24-hour room service", "En-suite bathroom"],
+      "shortDescription": "A bedroom with its own sitting corner in mint velvet, for longer stays.",
+      "description": "The Executive adds a proper sitting area to the bedroom: two mint velvet armchairs and a low table where you can take a call, read, or have breakfast brought up. It suits guests staying several nights who want more than a bed and a desk. Air conditioning, a smart TV, free Wi-Fi and 24-hour room service are all included.",
+      "images": [{ "src": "/images/selems-hotel-akure-executive-suite-lounge.jpg", "alt": "Executive room seating area with mint velvet armchairs", "width": 2400, "height": 1602 }],
+      "seoTitle": "Executive Room in Akure — ₦50,000/night | Selems Hotel",
+      "seoDescription": "Executive room with a velvet sitting area, smart TV and free Wi-Fi in Akure. Ideal for longer stays. Reserve online, pay at the hotel."
+    },
+    {
+      "name": "Executive Double", "slug": "executive-double", "category": "room", "sortOrder": 5, "featured": false,
+      "baseRate": 5500000, "weekendRate": null, "maxAdults": 2, "maxChildren": 1, "sizeSqm": null,
+      "facts": ["1 bed", "1 bathroom", "Lounge", "Sleeps 2"],
+      "amenities": ["Air conditioning", "Lounge with sofas", "Large smart TV", "Free Wi-Fi", "24-hour room service", "En-suite bathroom"],
+      "shortDescription": "A bedroom plus a lounge with sofas and a large TV, for guests who receive visitors.",
+      "description": "The Executive Double pairs the bedroom with a lounge furnished with sage sofas, a coffee table and a large wall-mounted smart TV. It is the room to choose if you expect visitors, want to watch a match in comfort, or simply prefer not to spend the evening on the bed. Free Wi-Fi, air conditioning and round-the-clock room service come as standard.",
+      "images": [{ "src": "/images/selems-hotel-akure-suite-lounge-tv.jpg", "alt": "Executive Double lounge with sage sofas and wall-mounted smart TV", "width": 2400, "height": 1688 }],
+      "seoTitle": "Executive Double in Akure — ₦55,000/night | Selems Hotel",
+      "seoDescription": "Executive Double with a lounge, sofas and large smart TV in Ijapo Extension, Akure. Free Wi-Fi and 24/7 room service. Pay at the hotel."
+    },
+    {
+      "name": "Diplomatic Suite", "slug": "diplomatic-suite", "category": "suite", "sortOrder": 6, "featured": false,
+      "baseRate": 6000000, "weekendRate": null, "maxAdults": 2, "maxChildren": 1, "sizeSqm": null,
+      "facts": ["Suite", "1 bed", "1 bathroom", "Desk and ergonomic chair", "Lounge"],
+      "amenities": ["Air conditioning", "Desk and ergonomic chair", "Lounge", "High-speed Wi-Fi", "Smart TV", "24-hour room service", "En-suite bathroom"],
+      "shortDescription": "A private, comfortable suite for officials and visitors who need to work and receive guests.",
+      "description": "Designed for dignitaries and visitors on official business, the Diplomatic Suite combines a restful bedroom with a lounge for receiving guests and a desk with an ergonomic chair for work. High-speed Wi-Fi keeps meetings running smoothly, and the front office can arrange anything you need at any hour. Privacy, quiet and attentive service are the point of this suite.",
+      "images": [{ "src": "/images/selems-hotel-akure-suite-living-area.jpg", "alt": "Diplomatic Suite living area with armchairs and coffee table", "width": 2400, "height": 1692 }],
+      "seoTitle": "Diplomatic Suite in Akure — ₦60,000/night | Selems Hotel",
+      "seoDescription": "A private suite in Akure with lounge, desk and ergonomic chair, high-speed Wi-Fi and 24/7 service. Ideal for official visits. Pay at the hotel."
+    },
+    {
+      "name": "Royal Suite", "slug": "royal-suite", "category": "suite", "sortOrder": 7, "featured": false,
+      "baseRate": 6500000, "weekendRate": null, "maxAdults": 2, "maxChildren": 1, "sizeSqm": null,
+      "facts": ["Suite", "1 bed", "1 bathroom", "Lounge"],
+      "amenities": ["Air conditioning", "Lounge", "Smart TV with streaming apps", "Free Wi-Fi", "24-hour room service", "En-suite bathroom"],
+      "shortDescription": "A grand upholstered bed, soft grey tones and space to unwind.",
+      "description": "The Royal Suite is centred on a tall upholstered headboard in soft grey, dressed in white linen and framed by bedside lamps. With a separate lounge, there is room to spread out over a long weekend or a family occasion in Akure. It includes everything the hotel offers as standard: air conditioning, a smart TV, free Wi-Fi and room service around the clock.",
+      "images": [{ "src": "/images/selems-hotel-akure-royal-suite-bed.jpg", "alt": "Royal Suite bedroom with upholstered headboard and white linen", "width": 2400, "height": 1602 }],
+      "seoTitle": "Royal Suite in Akure — ₦65,000/night | Selems Hotel",
+      "seoDescription": "Spacious Royal Suite in Ijapo Extension, Akure, with lounge, smart TV and free Wi-Fi. 24/7 front office and room service. Pay at the hotel."
+    },
+    {
+      "name": "VIP Suite", "slug": "vip-suite", "category": "suite", "sortOrder": 8, "featured": true,
+      "baseRate": 7000000, "weekendRate": null, "maxAdults": 2, "maxChildren": 1, "sizeSqm": null,
+      "facts": ["Suite", "1 bed", "1 bathroom", "Separate lounge", "Sleeps 2"],
+      "amenities": ["Air conditioning", "Separate lounge with sofas", "Large smart TV", "Work desk and chair", "Free Wi-Fi", "24-hour room service", "En-suite bathroom", "Daily housekeeping"],
+      "shortDescription": "Green velvet, a separate lounge and our most requested suite for special stays.",
+      "description": "The VIP Suite opens with a deep green velvet headboard and white bedding, then continues into a separate lounge with sofas and a large smart TV. It suits guests staying several nights, couples marking an occasion, or anyone who wants to receive visitors without sitting on the bed. A work desk, fast Wi-Fi, air conditioning and 24-hour room service complete the suite.",
+      "images": [
+        { "src": "/images/selems-hotel-akure-vip-suite-bed.jpg", "alt": "VIP Suite bedroom at Selems Hotel, Akure, with green velvet headboard", "width": 2400, "height": 1602 },
+        { "src": "/images/selems-hotel-akure-suite-lounge-tv.jpg", "alt": "VIP Suite lounge with sage sofas and smart TV", "width": 2400, "height": 1688 },
+        { "src": "/images/selems-hotel-akure-suite-living-area.jpg", "alt": "Suite sitting area with armchairs and coffee table", "width": 2400, "height": 1692 },
+        { "src": "/images/selems-hotel-akure-executive-suite-lounge.jpg", "alt": "Mint velvet armchairs in the suite", "width": 2400, "height": 1602 },
+        { "src": "/images/selems-hotel-akure-corridor-chandelier.jpg", "alt": "Chandelier-lit corridor leading to the suites", "width": 2400, "height": 1809 }
+      ],
+      "seoTitle": "VIP Suite in Akure — ₦70,000/night | Selems Hotel",
+      "seoDescription": "VIP Suite with separate lounge, large smart TV and free Wi-Fi in Ijapo Extension, Akure. 24/7 room service. Reserve now, pay at the hotel."
+    },
+    {
+      "name": "Penthouse", "slug": "penthouse", "category": "suite", "sortOrder": 9, "featured": false,
+      "baseRate": 7500000, "weekendRate": null, "maxAdults": 2, "maxChildren": 1, "sizeSqm": null,
+      "facts": ["Suite", "1 bed", "1 bathroom", "Lounge", "Sleeps 2"],
+      "amenities": ["Air conditioning", "Ambient mood lighting", "Lounge", "Smart TV with streaming apps", "Free Wi-Fi", "24-hour room service", "En-suite bathroom"],
+      "shortDescription": "Our most private suite, with a lounge and mood lighting for the evening.",
+      "description": "The Penthouse is set apart from the comings and goings of the hotel, for guests who want the most private stay Selems offers. Adjustable mood lighting changes the room from bright and practical in the day to calm and atmospheric at night, and the lounge gives you space to relax or receive a guest. With a smart TV with streaming apps, free Wi-Fi and 24-hour room service, it is the suite we suggest for celebrations, anniversaries and longer stays in Akure.",
+      "images": [{ "src": "/images/selems-hotel-akure-room-mood-lighting.jpg", "alt": "Penthouse bedroom with ambient evening lighting", "width": 2400, "height": 1602 }],
+      "seoTitle": "Penthouse Suite in Akure — ₦75,000/night | Selems Hotel",
+      "seoDescription": "The Penthouse suite in Akure: lounge, mood lighting, smart TV and free Wi-Fi, with 24/7 room service. Reserve now, pay at the hotel."
+    }
+  ],
+
+  "devUnits": {
+    "_note": "DEVELOPMENT ONLY. Replace with the hotel's real room numbers before launch.",
+    "standard-room": ["101", "102", "105", "106"],
+    "business-room": ["103", "107", "108"],
+    "deluxe-room": ["104", "109", "110", "111"],
+    "executive": ["201", "205", "206"],
+    "executive-double": ["202", "207"],
+    "diplomatic-suite": ["203", "208"],
+    "royal-suite": ["204", "209"],
+    "vip-suite": ["301", "303"],
+    "penthouse": ["302"]
+  },
+
+  "offers": [
+    {
+      "title": "The long weekend", "slug": "long-weekend", "summary": "3 nights for ₦100,000. Arrive Friday, leave Monday.",
+      "nights": 3, "priceTotal": 10000000, "roomTypeSlugs": ["standard-room"], "arrivalWeekdays": [5],
+      "validFrom": "2026-10-01", "validTo": "2026-12-31", "showOnHome": true, "published": true,
+      "terms": "Arrive on a Friday and stay three nights in a Standard Room for ₦100,000 in total. Subject to availability. Pay at the hotel on arrival."
+    }
+  ],
+
+  "facilities": [
+    { "title": "24/7 front office", "eyebrow": "Open 24/7", "icon": "clock", "sortOrder": 1, "published": true,
+      "body": "Someone is at the desk every hour of the day for late check-ins, taxis, laundry and anything else you need.",
+      "image": { "src": "/images/selems-hotel-akure-front-desk-reception.jpg", "alt": "24-hour front office and reception desk at Selems Hotel, Akure", "width": 2400, "height": 1658 } },
+    { "title": "24/7 room service", "eyebrow": "Food any hour", "icon": "concierge-bell", "sortOrder": 2, "published": true,
+      "body": "Eat in the restaurant or order to your room at any time. Breakfast in bed is no trouble.",
+      "image": { "src": "/images/selems-hotel-akure-restaurant-dining-room.jpg", "alt": "Selems restaurant dining room in Akure with booth seating", "width": 2400, "height": 1602 } },
+    { "title": "Free high-speed Wi-Fi", "eyebrow": "Stay connected", "icon": "wifi", "sortOrder": 3, "published": true,
+      "body": "Fast Wi-Fi throughout the building for video calls and streaming." },
+    { "title": "Smart TVs", "eyebrow": "Stay connected", "icon": "tv", "sortOrder": 4, "published": true,
+      "body": "A smart TV in every room with Netflix, YouTube and more.",
+      "image": { "src": "/images/selems-hotel-akure-suite-lounge-tv.jpg", "alt": "Smart TV in a suite lounge at Selems Hotel", "width": 2400, "height": 1688 } },
+    { "title": "Restaurant", "eyebrow": "Dining", "icon": "utensils", "sortOrder": 5, "published": true,
+      "body": "Nigerian and continental cooking, from breakfast to dinner." },
+    { "title": "Secure on-site parking", "eyebrow": "Arrive by car", "icon": "car", "sortOrder": 6, "published": true,
+      "body": "Park free in front of the hotel, inside the perimeter wall, with lighting through the night.",
+      "image": { "src": "/images/selems-hotel-akure-exterior-front.jpg", "alt": "Gated parking forecourt in front of Selems Hotel, Akure", "width": 2400, "height": 1232 } },
+    { "title": "Indoor and outdoor bars", "eyebrow": "Unwind", "icon": "wine", "sortOrder": 7, "published": true,
+      "body": "A lounge bar inside and an open-air bar outside, for a drink after a long day of meetings.",
+      "image": { "src": "/images/selems-hotel-akure-bar-counter.jpg", "alt": "Bar counter with drinks fridge at Selems Hotel", "width": 2400, "height": 1602 } },
+    { "title": "Power supply", "icon": "zap", "sortOrder": 8, "published": true, "body": "24-hour power with generator backup, so the lights and air conditioning stay on." },
+    { "title": "Security", "icon": "shield", "sortOrder": 9, "published": true, "body": "Guards on duty and CCTV around the property, with gated on-site parking." },
+    { "title": "Laundry", "icon": "shirt", "sortOrder": 10, "published": true, "body": "Laundry and pressing service. Ask the front office to collect from your room." }
+  ],
+
+  "faqs": [
+    { "question": "What time are check-in and check-out?", "answer": "The front office is open 24 hours, so you can arrive at any time of day or night. Call or WhatsApp us if you would like to arrange an early check-in or late check-out.", "pages": ["home", "rooms"], "sortOrder": 1, "published": true },
+    { "question": "Do I have to pay when I book online?", "answer": "No. Your room is reserved as soon as you confirm, and you pay at the front desk when you arrive, by cash, bank transfer or card.", "pages": ["home", "rooms"], "sortOrder": 2, "published": true },
+    { "question": "Is there parking at the hotel?", "answer": "Yes. Parking is free in the hotel's gated, lit forecourt.", "pages": ["home"], "sortOrder": 3, "published": true },
+    { "question": "Can I cancel my booking?", "answer": "Yes. Use the “Manage or cancel your booking” link in your confirmation email, or call or WhatsApp the front office and we will help.", "pages": ["home", "rooms"], "sortOrder": 4, "published": true },
+    { "question": "Do you serve food at night?", "answer": "Yes. Room service runs 24 hours a day.", "pages": ["home", "dining"], "sortOrder": 5, "published": true },
+    { "question": "Is there Wi-Fi?", "answer": "Yes, free high-speed Wi-Fi throughout the hotel.", "pages": ["home"], "sortOrder": 6, "published": true },
+    { "question": "What is the best area to stay in Akure?", "answer": "For a quiet stay with easy access to the whole city, Ijapo Estate and its extension are a good choice. For government business, Alagbaka is closest.", "pages": ["akure-guide"], "sortOrder": 7, "published": true },
+    { "question": "How much does a hotel in Akure cost per night?", "answer": "At Selems, rooms range from {fromRate} to {toRate} a night depending on the room type.", "pages": ["akure-guide"], "sortOrder": 8, "published": true, "_note": "{fromRate}/{toRate} are filled from live rates at render time." },
+    { "question": "Can I book several rooms for a wedding or event?", "answer": "Yes. Send us the dates and number of rooms through the contact form or WhatsApp and we will reply with availability and a group rate.", "pages": ["rooms", "contact"], "sortOrder": 9, "published": true }
+  ],
+
+  "gallery": [
+    { "src": "/images/selems-hotel-akure-vip-suite-bed.jpg", "caption": "VIP Suite", "category": "suites", "room": "vip-suite" },
+    { "src": "/images/selems-hotel-akure-indoor-bar.jpg", "caption": "Indoor bar", "category": "bar" },
+    { "src": "/images/selems-hotel-akure-corridor-chandelier.jpg", "caption": "Corridor", "category": "hotel" },
+    { "src": "/images/selems-hotel-akure-royal-suite-bed.jpg", "caption": "Royal Suite", "category": "suites", "room": "royal-suite" },
+    { "src": "/images/selems-hotel-akure-front-desk-reception.jpg", "caption": "Front office", "category": "hotel" },
+    { "src": "/images/selems-hotel-akure-suite-living-area.jpg", "caption": "Diplomatic Suite lounge", "category": "suites", "room": "diplomatic-suite" },
+    { "src": "/images/selems-hotel-akure-deluxe-room-bed.jpg", "caption": "Deluxe Room", "category": "rooms", "room": "deluxe-room" },
+    { "src": "/images/selems-hotel-akure-restaurant-dining-room.jpg", "caption": "Restaurant", "category": "dining" },
+    { "src": "/images/selems-hotel-akure-executive-suite-lounge.jpg", "caption": "Executive", "category": "rooms", "room": "executive" },
+    { "src": "/images/selems-hotel-akure-bar-wine-display.jpg", "caption": "Back bar", "category": "bar" },
+    { "src": "/images/selems-hotel-akure-standard-room-bed.jpg", "caption": "Standard Room", "category": "rooms", "room": "standard-room" },
+    { "src": "/images/selems-hotel-akure-corridor-blue-lighting.jpg", "caption": "Corridor at night", "category": "hotel" },
+    { "src": "/images/selems-hotel-akure-suite-lounge-tv.jpg", "caption": "Executive Double lounge", "category": "rooms", "room": "executive-double" },
+    { "src": "/images/selems-hotel-akure-business-room-bed.jpg", "caption": "Business Room", "category": "rooms", "room": "business-room" },
+    { "src": "/images/selems-hotel-akure-bar-counter.jpg", "caption": "Bar counter", "category": "bar" },
+    { "src": "/images/selems-hotel-akure-room-mood-lighting.jpg", "caption": "Penthouse", "category": "suites", "room": "penthouse" },
+    { "src": "/images/selems-hotel-akure-corridor-artwork.jpg", "caption": "Corridor art", "category": "hotel" },
+    { "src": "/images/selems-hotel-akure-exterior-front.jpg", "caption": "Arrival and parking", "category": "hotel" },
+    { "src": "/images/selems-hotel-akure-exterior-wide.jpg", "caption": "The hotel from the street", "category": "hotel" }
+  ],
+  "_galleryNote": "Alt text and width/height for gallery items come from content/images.md; the seed script should look them up by src.",
+
+  "pages": {
+    "home": {
+      "seoTitle": "Hotel in Akure | Selems Exclusive Hotel & Suites",
+      "seoDescription": "Rooms and suites in Ijapo Extension, Akure, from ₦35,000 a night. Restaurant, two bars, free Wi-Fi, 24/7 front office, secure parking. Book direct.",
+      "fields": {
+        "eyebrow": "Ijapo Extension · Akure, Ondo State",
+        "h1": "A hotel and suites in Akure, kept to an international standard.",
+        "lede": "Nine room types from {fromRate} a night, a restaurant serving Nigerian and continental dishes, two bars, and a front office that never closes.",
+        "heroImages": ["/images/selems-hotel-akure-royal-suite-bed.jpg", "/images/selems-hotel-akure-corridor-chandelier.jpg", "/images/selems-hotel-akure-indoor-bar.jpg"],
+        "aboutHeading": "Quiet rooms, a full kitchen and a team on duty all night.",
+        "aboutBody": "Selems Exclusive Hotel & Suites sits in Atibiti Layout, Ijapo Extension, a calm residential part of Akure. Guests come for business, family events and weekends away. Every room has air conditioning, a smart TV with streaming apps and free Wi-Fi, and the front office handles late arrivals and requests at any hour.",
+        "diningHeading": "Local favourites and continental plates, at any hour.",
+        "diningBody": "The restaurant cooks local favourites and continental plates. Room service runs around the clock, and the indoor and outdoor bars stay open into the evening.",
+        "locationHeading": "Atibiti Layout, Ijapo Extension, Akure",
+        "locationBody": "A residential street off the main Ijapo road: quiet at night, with quick access to the city centre.",
+        "distances": [
+          { "place": "Akure Airport", "value": "[CONFIRM]" },
+          { "place": "Federal University of Technology, Akure", "value": "[CONFIRM]" },
+          { "place": "Oja Oba market and the Deji's palace", "value": "[CONFIRM]" },
+          { "place": "Ondo State Government Secretariat, Alagbaka", "value": "[CONFIRM]" }
+        ]
+      }
+    },
+    "rooms": {
+      "seoTitle": "Rooms & Suites in Akure from ₦35,000 | Selems Hotel",
+      "seoDescription": "Compare 9 rooms and suites in Akure: Standard, Deluxe, Executive, Royal, VIP and Penthouse. Prices per night, photos and instant booking.",
+      "fields": {
+        "h1": "Rooms and suites in Selems",
+        "lede": "Nine room types, all with air conditioning, a smart TV, free Wi-Fi and 24-hour room service. Prices are per room, per night, in naira.",
+        "inEveryRoom": ["Air conditioning", "Smart TV with Netflix and YouTube", "Free high-speed Wi-Fi", "24-hour room service", "En-suite bathroom", "Daily housekeeping", "Free on-site parking", "24-hour front office"]
+      }
+    },
+    "dining": {
+      "seoTitle": "Restaurant & Bar in Akure | Selems Exclusive Hotel",
+      "seoDescription": "Nigerian and continental food, 24-hour room service, an indoor lounge bar and an outdoor bar in Ijapo Extension, Akure.",
+      "fields": {
+        "h1": "Restaurant and bars at Selems, Akure",
+        "lede": "A restaurant for Nigerian and continental cooking, an indoor bar and lounge, an outdoor bar for warm evenings, and room service that never stops. Open to hotel guests and visitors.",
+        "hours": [{ "label": "Breakfast", "value": "[CONFIRM]" }, { "label": "Lunch and dinner", "value": "[CONFIRM]" }, { "label": "Room service", "value": "24 hours" }],
+        "menuCategories": [
+          { "name": "Nigerian kitchen", "description": "Soups, swallows and rice dishes from the chef's menu." },
+          { "name": "Continental", "description": "Grills, pasta and sandwiches." },
+          { "name": "Breakfast", "description": "[CONFIRM]" }
+        ],
+        "indoorBar": { "heading": "Cognac, wine and cold drinks till late", "body": "A dark, comfortable room with lounge chairs and a stocked back bar: wines, cognac, whisky, beer and soft drinks.", "hours": "[CONFIRM]" },
+        "outdoorBar": { "heading": "Evenings in the open air", "body": "[CONFIRM] What the outdoor bar serves and its hours.", "published": false }
+      }
+    },
+    "facilities": {
+      "seoTitle": "Hotel Facilities | Selems Exclusive Hotel, Akure",
+      "seoDescription": "24/7 front office, room service, free Wi-Fi, smart TVs, gated parking, restaurant and bars at Selems Hotel in Ijapo Extension, Akure.",
+      "fields": { "h1": "Hotel facilities and services", "lede": "What is on hand during your stay, from the front desk at 3 a.m. to the parking outside." }
+    },
+    "gallery": {
+      "seoTitle": "Photos | Selems Exclusive Hotel & Suites, Akure",
+      "seoDescription": "Real photos of our rooms, suites, restaurant and bar in Ijapo Extension, Akure.",
+      "fields": { "h1": "Photos of Selems Hotel, Akure", "lede": "Real photographs of our rooms, suites, restaurant and bar." }
+    },
+    "contact": {
+      "seoTitle": "Contact & Directions | Selems Hotel, Ijapo Akure",
+      "seoDescription": "Call +234 903 155 9943 or WhatsApp us. Atibiti Layout, Ijapo Extension, Akure, Ondo State. Front office open 24 hours.",
+      "fields": { "h1": "Contact the hotel", "lede": "The front office answers calls and WhatsApp messages 24 hours a day.", "directions": "[CONFIRM] Directions from a known landmark, in the words the front office already uses." }
+    },
+    "akure-guide": {
+      "seoTitle": "Where to Stay in Akure (2026 Guide) | Selems Hotel",
+      "seoDescription": "The best areas to stay in Akure, how to get there, what to see nearby and booking tips from a local hotel team.",
+      "fields": {
+        "h1": "Where to stay in Akure: a visitor's guide",
+        "author": "[CONFIRM] Name, role",
+        "intro": "Which part of the city suits your trip, how to get here, and what to see while you are in town. Written by the team at Selems Exclusive Hotel & Suites.",
+        "sections": [
+          { "id": "glance", "heading": "Akure at a glance", "body": "Akure is the capital of Ondo State in south-west Nigeria. Most visitors come for government business, the Federal University of Technology (FUTA), weddings and family events, or as a base for Idanre Hills. The city is compact, so where you stay mostly decides how quiet your nights are and how long your morning drive takes." },
+          { "id": "areas", "heading": "Best areas to stay in Akure", "areas": [
+            { "name": "Alagbaka", "body": "The government district. Close to the State Secretariat and ministries; best for official visits." },
+            { "name": "Ijapo Estate and Extension", "body": "Residential and quiet, with good road access across the city. Selems is here." },
+            { "name": "Oba-Ile", "body": "Near Akure Airport. Handy for early flights." },
+            { "name": "FUTA axis", "body": "For convocations, conferences and campus visits." } ] },
+          { "id": "getting", "heading": "Getting to Akure", "body": "[CONFIRM] Airlines serving Akure Airport, road times from Lagos and Ibadan, and whether the hotel arranges airport pickup.", "published": false },
+          { "id": "see", "heading": "What to see nearby", "body": "Idanre Hills, a short drive from the city, is the best-known sight in the state: a climb of several hundred steps to an old hilltop settlement with wide views. In town, the Deji of Akure's palace and the Oja Oba market beside it are worth an afternoon." },
+          { "id": "tips", "heading": "Booking tips", "body": "Weekends with weddings and university convocations fill up fast, so book early for those dates. You can reserve online and pay at the front desk when you arrive." }
+        ]
+      }
+    },
+    "privacy": {
+      "seoTitle": "Privacy notice | Selems Exclusive Hotel & Suites, Akure",
+      "seoDescription": "How Selems Exclusive Hotel & Suites in Akure collects, uses and protects the personal data you give us when you book or contact us.",
+      "fields": {
+        "h1": "Privacy notice",
+        "intro": "This notice explains what personal data Selems Exclusive Hotel & Suites collects when you book a room or contact us through this website, why we use it, and the rights you have under the Nigeria Data Protection Act 2023.",
+        "sections": [
+          {
+            "id": "who",
+            "heading": "Who we are",
+            "body": "Selems Exclusive Hotel & Suites, Atibiti Layout, Ijapo Extension, Akure, Ondo State, Nigeria, is responsible for the personal data described here. You can contact us about it at info@selemsexclusivehotel.com."
+          },
+          {
+            "id": "collect",
+            "heading": "What we collect",
+            "body": "When you book: your name, email address, phone number, dates of stay, room, number of guests, and anything you choose to tell us, such as your expected arrival time, the purpose of your stay or special requests.\n\nWhen you send a message: your name, email address, phone number if you give it, and your message.\n\nTo keep the booking and contact forms safe from abuse, our systems also record the internet (IP) address a request comes from. We use analytics cookies only if you agree to them."
+          },
+          {
+            "id": "use",
+            "heading": "Why we use it",
+            "body": "We use your details to make and manage your booking, to send you booking emails (confirmation, changes, cancellation and a reminder before you arrive), to reply to your messages, and to prevent fraud and misuse of the website.\n\nAfter your stay we may send one email asking about your experience. You can ignore it, and you can ask us not to send it."
+          },
+          {
+            "id": "share",
+            "heading": "Who we share it with",
+            "body": "We do not sell your personal data. We share it only with the service providers that run this website and send our emails on our behalf, under contract and only for these purposes, and with authorities where the law requires it."
+          },
+          {
+            "id": "keep",
+            "heading": "How long we keep it",
+            "body": "We keep booking records for 24 months after your stay, and messages for 24 months after we receive them. After that we delete or anonymise them, unless the law requires us to keep them longer."
+          },
+          {
+            "id": "rights",
+            "heading": "Your rights",
+            "body": "You can ask us for a copy of your personal data, to correct it, to delete it, or to stop using it for a particular purpose, and you can withdraw consent you have given at any time. Email info@selemsexclusivehotel.com and we will respond as the law requires. If you are not satisfied, you can complain to the Nigeria Data Protection Commission."
+          }
+        ]
+      }
+    },
+    "terms": {
+      "seoTitle": "Booking terms | Selems Exclusive Hotel & Suites, Akure",
+      "seoDescription": "Booking terms for Selems Exclusive Hotel & Suites in Akure: paying at the hotel, check-in, arrivals, cancellations and group bookings.",
+      "fields": {
+        "h1": "Booking terms",
+        "intro": "These terms apply to rooms booked on this website. Booking online reserves your room straight away; you pay at the hotel.",
+        "sections": [
+          {
+            "id": "reservation",
+            "heading": "Your reservation",
+            "body": "Each online booking reserves one room for the dates you choose. Prices are per room, per night, in naira, and the total shown when you book is the amount due. You pay at the front desk on arrival, by cash, bank transfer or card."
+          },
+          {
+            "id": "checkin",
+            "heading": "Checking in",
+            "body": "Please bring a valid photo ID for the guest named on the booking. The front office is open 24 hours, so you can arrive at any time."
+          },
+          {
+            "id": "changes",
+            "heading": "Changing your booking",
+            "body": "To change your dates or room, call or WhatsApp the front office with your booking reference. Changes depend on availability and may change the price."
+          },
+          {
+            "id": "groups",
+            "heading": "Group and event bookings",
+            "body": "For several rooms, weddings, burials, convocations or conferences, contact us through the contact page or WhatsApp and we will reply with availability and a group rate."
+          }
+        ]
+      }
+    }
+  }
+}

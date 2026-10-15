@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phone room page — Selems Hotel</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&amp;family=Instrument+Sans:wght@400..700&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 390px; height: 2300px; position: relative; overflow: hidden; background: #F3F4F2; color: #17222D; font-family: 'Instrument Sans', system-ui, sans-serif">
+<div style="position: relative">
+<img src="../public/images/selems-hotel-akure-vip-suite-bed.jpg" alt="VIP Suite bedroom with green velvet headboard" style="width: 390px; height: 320px; object-fit: cover">
+<a href="MobileHome.dc.html" aria-label="Back" style="position: absolute; top: 14px; left: 14px; width: 44px; height: 44px; border-radius: 50%; background: rgba(243,244,242,.92); display: inline-flex; align-items: center; justify-content: center; color: #17222D"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+<span style="position: absolute; right: 14px; bottom: 14px; background: rgba(23,34,45,.8); color: #fff; font-size: 13px; padding: 4px 10px" class="num">1 / 6</span>
+</div>
+<div style="padding: 24px 20px; display: flex; flex-direction: column; gap: 14px">
+<span class="tag" style="align-self: flex-start">Suite</span>
+<h1 class="disp" style="font-size: 40px">VIP Suite</h1>
+<p class="muted small" style="margin: 0">1 bed · 1 bathroom · lounge · sleeps 2</p>
+<p style="margin: 0; color: #3B4B57">A bedroom with a deep green velvet headboard, opening onto a lounge with sofas and a large smart TV.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 0 20px">
+<img src="../public/images/selems-hotel-akure-suite-lounge-tv.jpg" alt="Suite lounge" style="width: 100%; height: 90px; object-fit: cover">
+<img src="../public/images/selems-hotel-akure-suite-living-area.jpg" alt="Sitting area" style="width: 100%; height: 90px; object-fit: cover">
+<img src="../public/images/selems-hotel-akure-executive-suite-lounge.jpg" alt="Armchairs" style="width: 100%; height: 90px; object-fit: cover">
+</div>
+<section style="padding: 32px 20px; display: flex; flex-direction: column; gap: 16px">
+<h2 class="disp" style="font-size: 26px">In the suite</h2>
+<ul class="check" style="grid-template-columns: minmax(0, 1fr)"><li>Smart TV with Netflix and YouTube</li><li>Free high-speed Wi-Fi</li><li>Air conditioning</li><li>Lounge with sofas</li><li>24-hour room service</li><li>Work desk and chair</li></ul>
+</section>
+<section style="padding: 0 20px 32px; display: flex; flex-direction: column; gap: 8px">
+<h2 class="disp" style="font-size: 26px; margin-bottom: 8px">Good to know</h2>
+<ul class="list small"><li><span>Check-in</span><span>From [2:00 PM]</span></li><li><span>Check-out</span><span>By [noon]</span></li><li style="border-bottom: 1px solid #DCE1E1"><span>Cancellation</span><span>[Policy]</span></li></ul>
+</section>
+<section style="background: #fff; padding: 32px 20px 140px; display: flex; flex-direction: column; gap: 14px">
+<h2 class="disp" style="font-size: 26px">Other suites</h2>
+<div style="display: flex; gap: 12px; align-items: center"><img src="../public/images/selems-hotel-akure-royal-suite-bed.jpg" alt="Royal Suite" style="width: 96px; height: 72px; object-fit: cover"><div><strong>Royal Suite</strong><p class="num small muted" style="margin: 0">₦65,000 / night</p></div></div>
+<div style="display: flex; gap: 12px; align-items: center"><img src="../public/images/selems-hotel-akure-room-mood-lighting.jpg" alt="Penthouse" style="width: 96px; height: 72px; object-fit: cover"><div><strong>Penthouse</strong><p class="num small muted" style="margin: 0">₦75,000 / night</p></div></div>
+</section>
+<div style="position: absolute; left: 0; right: 0; top: 768px; height: 76px; background: #fff; border-top: 1px solid #DCE1E1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 16px; box-shadow: 0 -8px 20px rgba(23,34,45,.08)">
+<div><p class="num" style="margin: 0; font-weight: 700; font-size: 18px">₦70,000</p><p class="small muted" style="margin: 0">per night</p></div>
+<a class="btn btn-amber" href="MobileBooking.dc.html">Choose dates</a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":2300}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
