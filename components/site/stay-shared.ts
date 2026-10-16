@@ -15,7 +15,7 @@ export const useTodayLagos = () => useSyncExternalStore(noop, () => todayLagos()
 
 export const fieldLabel = "text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground";
 export const fieldControl =
-  "min-h-12 w-full rounded-sm border border-line-strong bg-paper px-3.5 text-left text-[15px] text-ink outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber data-[state=open]:border-amber";
+  "min-h-12 w-full rounded-sm border border-line-strong bg-paper px-3.5 text-left text-[15px] text-ink outline-hidden focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-offset-2 focus-visible:outline-amber data-[state=open]:border-amber";
 
 export const stayNights = (s: Pick<Stay, "checkIn" | "checkOut">) =>
   s.checkIn && s.checkOut ? nightsBetween(s.checkIn, s.checkOut) : 0;
