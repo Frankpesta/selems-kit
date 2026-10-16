@@ -14,6 +14,15 @@ export default defineConfig({
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
     { name: "phone", use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } } },
+    // Cross-browser pass before launch (docs/08 Phase 5): E2E_ALL_BROWSERS=1 pnpm e2e
+    // (first: pnpm exec playwright install webkit firefox msedge).
+    ...(process.env.E2E_ALL_BROWSERS
+      ? [
+          { name: "iphone-safari", use: { ...devices["iPhone 15"] } },
+          { name: "firefox", use: { ...devices["Desktop Firefox"] } },
+          { name: "edge", use: { ...devices["Desktop Edge"], channel: "msedge" } },
+        ]
+      : []),
   ],
   webServer: process.env.E2E_BASE_URL
     ? undefined
