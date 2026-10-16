@@ -66,7 +66,7 @@ Environment variables (Production):
 Build command: `npx convex deploy --cmd 'pnpm build'`.
 
 - [ ] Preview deployment: `pnpm e2e` with `E2E_BASE_URL=<preview url>` passes.
-- [ ] PageSpeed Insights (mobile) on the preview for `/`, `/rooms`, `/rooms/vip-suite`: LCP < 2.0 s, CLS < 0.05, INP/TBT green. (Local Windows Lighthouse is too noisy to judge; CI and PSI are the reference.)
+- [ ] PageSpeed Insights (mobile) on the preview for `/`, `/rooms`, `/rooms/vip-suite`: LCP < 2.0 s, CLS < 0.05, INP/TBT green. (Local Windows Lighthouse is too noisy to judge; PSI is the reference.)
 - [ ] `node scripts/check-redirects.mjs <preview url>` passes.
 
 ## 4. Cross-device pass (anyone, ~1 hour)

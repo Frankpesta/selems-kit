@@ -1,6 +1,6 @@
 # 08 — Build plan
 
-Work in order. Each phase ends with its acceptance criteria passing (`pnpm lint && pnpm typecheck && pnpm test`, plus the listed checks). Open a PR per phase.
+Work in order. Each phase ends with its acceptance criteria passing (`pnpm lint && pnpm typecheck && pnpm test`, plus the listed checks), run locally: there is no CI pipeline (docs/03). Open a PR per phase.
 
 ## Phase 0 — Scaffold
 
