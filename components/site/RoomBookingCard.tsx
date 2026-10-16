@@ -12,6 +12,7 @@ import { EASE_OUT } from "@/components/motion/tokens";
 import { formatNaira } from "@/lib/money";
 import { plural } from "@/lib/format";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/analytics";
 import { LazyStayPicker } from "./LazyStayPicker";
 import type { Stay } from "./stay-shared";
 
@@ -49,6 +50,8 @@ export function RoomBookingCard({ room, phone, whatsapp, maxNights, windowDays }
     adults: Math.min(2, room.maxAdults),
     children: 0,
   });
+  // gtag loads after consent, so this only counts views once analytics is on.
+  useEffect(() => track("view_room", { item_id: room.slug }), [room.slug]);
   const ready = !!(stay.checkIn && stay.checkOut);
   // Fetched once per change of dates/guests (no live connection on content pages).
   const key = ready ? `${stay.checkIn}|${stay.checkOut}|${stay.adults}|${stay.children}` : "";

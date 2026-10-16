@@ -11,6 +11,7 @@ import { EASE_OUT } from "@/components/motion/tokens";
 import { isValidEmail, normalisePhone } from "@/convex/lib/validators";
 import { toAppError } from "@/lib/errors";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/analytics";
 import { fieldControl, fieldLabel } from "./stay-shared";
 
 const SUBJECTS = [
@@ -76,6 +77,7 @@ export function ContactForm() {
         message: fields.message,
       });
       setSent(true);
+      track("submit_inquiry", { subject: fields.subject });
     } catch (err) {
       const a = toAppError(err);
       if (a.field && a.field in fields) setErrors({ [a.field]: a.message });

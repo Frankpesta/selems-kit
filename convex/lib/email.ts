@@ -18,6 +18,9 @@ export const emailDisabled = () => {
   return !key || key.startsWith("re_placeholder");
 };
 
+/** Dev deployments may print sign-in codes and invite links to the logs when email is off. */
+export const devLogEnabled = () => process.env.EMAIL_DEV_LOG === "true";
+
 /** Front-desk recipients: Settings first, then the STAFF_ALERT_EMAILS env var, then the booking mailbox. */
 export function staffRecipients(settings: Pick<Doc<"settings">, "staffAlertEmails" | "emails">): string[] {
   if (settings.staffAlertEmails?.length) return settings.staffAlertEmails;

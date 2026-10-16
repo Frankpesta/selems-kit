@@ -26,6 +26,7 @@ import { formatNaira } from "@/lib/money";
 import { toAppError } from "@/lib/errors";
 import { downloadIcs, stayIcs } from "@/lib/ics";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/analytics";
 import { BookingSummary, type SummaryRoom } from "./BookingSummary";
 import { DetailsForm, validateDetails, type DetailErrors } from "./DetailsForm";
 import { EMPTY_DETAILS, type Confirmation, type GuestDetails, type HotelInfo } from "./types";
@@ -37,6 +38,17 @@ import { EMPTY_DETAILS, type Confirmation, type GuestDetails, type HotelInfo } f
 const STEPS = ["Dates", "Room", "Your details", "Review", "Confirmed"] as const;
 const DETAILS_KEY = "selems:booking-details";
 const CONFIRM_KEY = "selems:last-booking";
+
+// When the step changes, the control that was pressed unmounts and focus would
+// drop to <body>. Move it to the new step's heading instead, so keyboard and
+// screen-reader users continue from the top of the step (WCAG 2.4.3).
+let focusPending = false;
+const focusStepTitle = (el: HTMLHeadingElement | null) => {
+  if (el && focusPending) {
+    focusPending = false;
+    el.focus({ preventScroll: true });
+  }
+};
 
 const readJson = <T,>(key: string): T | null => {
   try {
@@ -104,6 +116,7 @@ export function BookingFlow({ hotel }: { hotel: HotelInfo }) {
       else q.set(k, String(v));
     }
     const url = `/book?${q.toString()}`;
+    focusPending = true;
     if (opts.replace) router.replace(url, { scroll: false });
     else router.push(url, { scroll: false });
     top.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -183,8 +196,8 @@ export function BookingFlow({ hotel }: { hotel: HotelInfo }) {
         sessionStorage.setItem(CONFIRM_KEY, JSON.stringify(done));
         sessionStorage.removeItem(DETAILS_KEY);
       } catch {}
-      // Analytics (no PII): fires only if GA4 has been loaded after consent.
-      (window as { gtag?: (...a: unknown[]) => void }).gtag?.("event", "booking_reserved", {
+      // Analytics (no PII): a no-op unless GA4 was loaded after consent.
+      track("booking_reserved", {
         value: chosen.total / 100,
         currency: "NGN",
         items: [{ item_id: chosen.slug, item_name: chosen.name, quantity: nights }],
@@ -266,7 +279,7 @@ export function BookingFlow({ hotel }: { hotel: HotelInfo }) {
 
               {step === 1 ? (
                 <>
-                  <h1 id="step-title" className="font-display m-0 text-[40px] min-[760px]:text-[48px]">
+                  <h1 id="step-title" ref={focusStepTitle} tabIndex={-1} className="font-display m-0 outline-none text-[40px] min-[760px]:text-[48px]">
                     When are you staying?
                   </h1>
                   <div className="border border-line bg-paper p-6">
@@ -304,7 +317,7 @@ export function BookingFlow({ hotel }: { hotel: HotelInfo }) {
                 <>
                   <div className="flex flex-wrap items-end justify-between gap-4">
                     <div>
-                      <h1 id="step-title" className="font-display m-0 text-[40px] min-[760px]:text-[48px]">
+                      <h1 id="step-title" ref={focusStepTitle} tabIndex={-1} className="font-display m-0 outline-none text-[40px] min-[760px]:text-[48px]">
                         Choose a room
                       </h1>
                       <p className="mt-2 mb-0 text-muted-foreground">
@@ -342,7 +355,10 @@ export function BookingFlow({ hotel }: { hotel: HotelInfo }) {
                               type="button"
                               disabled={disabled}
                               aria-pressed={selected}
-                              onClick={() => go({ room: r.slug, step: 3, unavailable: null })}
+                              onClick={() => {
+                                track("begin_booking", { item_id: r.slug });
+                                go({ room: r.slug, step: 3, unavailable: null });
+                              }}
                               className={cn(
                                 "grid w-full grid-cols-[96px_minmax(0,1fr)] items-center gap-4 border bg-paper p-3 text-left transition-[border-color,box-shadow] min-[560px]:grid-cols-[132px_minmax(0,1fr)_auto] min-[560px]:gap-5",
                                 selected ? "border-amber shadow-[inset_0_0_0_1px_var(--color-amber)]" : "border-line hover:border-ink",
@@ -397,7 +413,7 @@ export function BookingFlow({ hotel }: { hotel: HotelInfo }) {
 
               {step === 3 ? (
                 <>
-                  <h1 id="step-title" className="font-display m-0 text-[40px] min-[760px]:text-[48px]">
+                  <h1 id="step-title" ref={focusStepTitle} tabIndex={-1} className="font-display m-0 outline-none text-[40px] min-[760px]:text-[48px]">
                     Your details
                   </h1>
                   <DetailsForm value={details} onChange={(d) => { setDetails(d); if (Object.keys(errors).length) setErrors(validateDetails(d)); }} errors={errors} />
@@ -426,7 +442,7 @@ export function BookingFlow({ hotel }: { hotel: HotelInfo }) {
 
               {step === 4 ? (
                 <>
-                  <h1 id="step-title" className="font-display m-0 text-[40px] min-[760px]:text-[48px]">
+                  <h1 id="step-title" ref={focusStepTitle} tabIndex={-1} className="font-display m-0 outline-none text-[40px] min-[760px]:text-[48px]">
                     Review and reserve
                   </h1>
                   <div className="flex items-start gap-4 border border-amber bg-[#FFFBF7] p-5 shadow-[inset_0_0_0_1px_var(--color-amber)]">
@@ -546,7 +562,7 @@ function Confirmed({ confirmation: c, hotel }: { confirmation: Confirmation | nu
   if (!c) {
     return (
       <div className="flex flex-col gap-4 border border-line bg-paper p-8">
-        <h1 id="step-title" className="font-display m-0 text-[40px]">
+        <h1 id="step-title" ref={focusStepTitle} tabIndex={-1} className="font-display m-0 outline-none text-[40px]">
           Your booking
         </h1>
         <p className="m-0 text-body">
@@ -586,7 +602,7 @@ function Confirmed({ confirmation: c, hotel }: { confirmation: Confirmation | nu
       >
         <CheckIcon className="size-7" strokeWidth={2} aria-hidden="true" />
       </m.span>
-      <h1 id="step-title" className="font-display m-0 text-[40px] min-[760px]:text-[52px]">
+      <h1 id="step-title" ref={focusStepTitle} tabIndex={-1} className="font-display m-0 outline-none text-[40px] min-[760px]:text-[52px]">
         You&rsquo;re booked, {c.firstName}.
       </h1>
       <p className="lede m-0">

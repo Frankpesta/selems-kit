@@ -62,6 +62,9 @@ pnpm test           # vitest: "unit" project (lib/, tests/) + "convex" project (
 pnpm e2e            # playwright against `next start` (run pnpm build first); desktop + 390px phone
 npx convex run seed:all          # load content/seed.json
 npx convex run users:bootstrapAdmin '{"email":"…"}'   # first admin
+node scripts/check-redirects.mjs [baseUrl] [--www]   # old WordPress URLs → new pages
+E2E_ALL_BROWSERS=1 pnpm e2e      # + iPhone Safari, Firefox, Edge
+E2E_ADMIN_EMAIL=… E2E_ADMIN_PASSWORD=… pnpm e2e   # + signed-in admin axe checks
 ```
 
 Versions in use: Next.js 16.4.1 (Cache Components on, `proxy.ts`), React 19.3, Tailwind 4.3, shadcn 4 (radix-nova), Convex 1.46, Vitest 5, Playwright 1.64. Read `AGENTS.md` and `node_modules/next/dist/docs/` before writing Next.js code. Build-time decisions are logged at the end of docs/03.

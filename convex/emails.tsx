@@ -6,7 +6,7 @@ import { render } from "react-email";
 import { internalAction, type ActionCtx } from "./_generated/server";
 import { internal } from "./_generated/api";
 import type { Id } from "./_generated/dataModel";
-import { emailDisabled, emailFrom, resend, siteUrl } from "./lib/email";
+import { devLogEnabled, emailDisabled, emailFrom, resend, siteUrl } from "./lib/email";
 import { BookingConfirmation } from "../emails/BookingConfirmation";
 import { StaffNewBooking } from "../emails/StaffNewBooking";
 import { BookingCancelled } from "../emails/BookingCancelled";
@@ -141,7 +141,7 @@ export const staffNewInquiry = internalAction({
     const { inquiry } = data;
     const subject = SUBJECTS[inquiry.subject] ?? inquiry.subject;
     if (emailDisabled()) {
-      console.log(`[email skipped: no Resend key] inquiry from ${inquiry.name}`);
+      console.log(`[email skipped: no Resend key] new inquiry ${inquiryId}`);
       return;
     }
     const element = (
@@ -227,8 +227,10 @@ async function sendStaff(ctx: ActionCtx, opts: { to: string[]; subject: string; 
   const to = opts.to.filter(Boolean);
   if (to.length === 0) return;
   if (emailDisabled()) {
-    // Development only: with no Resend key, codes and links go to the Convex logs.
-    console.log(`[email skipped: no Resend key] ${opts.subject}${opts.devLog ? ` · ${opts.devLog}` : ""}`);
+    // Codes and invite links reach the logs only on deployments that opt in
+    // (EMAIL_DEV_LOG=true on a dev deployment), never by accident in production.
+    const detail = opts.devLog && devLogEnabled() ? ` · ${opts.devLog}` : "";
+    console.log(`[email skipped: no Resend key] ${opts.subject}${detail}`);
     return;
   }
   await resend.sendEmail(ctx, {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LockIcon, PhoneIcon } from "lucide-react";
 import { MotionProvider } from "@/components/motion/MotionProvider";
+import { Analytics } from "@/components/site/Analytics";
 import { Logo } from "@/components/site/Logo";
 import { getSettings } from "@/lib/data";
 import { displayPhone, mainPhone, telHref } from "@/lib/contact";
@@ -34,6 +35,7 @@ export default async function BookingLayout({ children }: LayoutProps<"/">) {
         </div>
       </header>
       <main id="main">{children}</main>
+      <Analytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </MotionProvider>
   );
 }
