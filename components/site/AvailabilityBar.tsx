@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/analytics";
 import { LazyStayPicker } from "./LazyStayPicker";
 import type { Stay } from "./stay-shared";
 
@@ -19,6 +20,7 @@ export function AvailabilityBar({ className }: { className?: string }) {
       params.set("checkIn", stay.checkIn);
       params.set("checkOut", stay.checkOut);
     }
+    track("check_availability", { adults: stay.adults, children: stay.children });
     router.push(`/book?${params.toString()}`);
   }
 

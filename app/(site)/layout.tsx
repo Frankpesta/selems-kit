@@ -9,6 +9,7 @@ import { MobileBookBar } from "@/components/site/MobileBookBar";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { MotionProvider } from "@/components/motion/MotionProvider";
+import { Analytics } from "@/components/site/Analytics";
 
 const HOTEL_IMAGES = [
   "/images/selems-hotel-akure-exterior-front.jpg",
@@ -67,6 +68,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/">) {
           HOTEL_IMAGES,
         )}
       />
+      <Analytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </MotionProvider>
   );
 }
