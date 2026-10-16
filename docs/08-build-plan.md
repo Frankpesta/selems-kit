@@ -59,6 +59,8 @@ Order: auth (login, invite sign-up, reset, route protection, `requireStaff`/`req
 
 ## Phase 5 — Content, QA, launch
 
+> **Status (2026-10-16).** Code side done: items 2 (axe on public pages + sign-in + key admin screens; keyboard-only booking), 3 (automated: `E2E_ALL_BROWSERS=1 pnpm e2e` adds iPhone Safari/Firefox/Edge; real devices remain a manual pass), 4 (CSP and headers, auth audit test, PII removed from logs), 5 (`docs/09-staff-guide.md`), launch steps scripted in `docs/10-launch-runbook.md` with `scripts/check-redirects.mjs`. **Waiting on the hotel:** item 1 (`[CONFIRM]` answers and the real room list; table in docs/10 §0). **Waiting on launch day:** item 6 checkboxes (prod deploy, Resend domain, Vercel, DNS, GSC, GBP) and the PageSpeed check on the Vercel preview.
+
 1. Replace every `[CONFIRM]` value with the hotel's answers (docs/01 open questions). Real room list → `rooms` table.
 2. Accessibility pass: axe in Playwright on every public page and key admin screens; keyboard-only booking run.
 3. Cross-device: Android Chrome on a mid-range phone over throttled 3G/4G, iPhone Safari, desktop Chrome/Edge/Firefox.
